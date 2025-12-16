@@ -9,9 +9,6 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import os
 
-# =============================================================================
-# PAGE CONFIG
-# =============================================================================
 st.set_page_config(
     page_title="PPM Analytics",
     page_icon="",
@@ -19,9 +16,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# =============================================================================
-# CUSTOM CSS - COMPLETELY NEW DESIGN
-# =============================================================================
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
@@ -225,19 +219,12 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# =============================================================================
-# LOAD DATA
-# =============================================================================
 @st.cache_data
 def load_data():
     data = {}
 
     if os.path.exists('rapm_rolling_all_years.csv'):
-        rapm = pd.read_csv('rapm_rolling_all_years.csv')
-        if os.path.exists('pbpstats_data/api/all_players.csv'):
-            players = pd.read_csv('pbpstats_data/api/all_players.csv')
-            rapm = rapm.merge(players[['player_id', 'player_name']], on='player_id', how='left')
-        data['rapm'] = rapm
+        data['rapm'] = pd.read_csv('rapm_rolling_all_years.csv')
 
     if os.path.exists('website_data/player_tiers.csv'):
         data['tiers'] = pd.read_csv('website_data/player_tiers.csv')
@@ -258,9 +245,6 @@ def load_data():
 
 data = load_data()
 
-# =============================================================================
-# SIDEBAR NAVIGATION
-# =============================================================================
 with st.sidebar:
     st.markdown("""
     <div style="padding: 20px; text-align: center;">
@@ -304,9 +288,6 @@ with st.sidebar:
     </div>
     """, unsafe_allow_html=True)
 
-# =============================================================================
-# HOME PAGE
-# =============================================================================
 if page == "Home":
     # Hero
     st.markdown("""
@@ -395,9 +376,6 @@ if page == "Home":
             </div>
             """, unsafe_allow_html=True)
 
-# =============================================================================
-# THE STUDY PAGE
-# =============================================================================
 elif page == "The Study":
     st.markdown('<h2 class="section-title">The Methodology</h2>', unsafe_allow_html=True)
 
@@ -431,7 +409,7 @@ elif page == "The Study":
         <div class="method-box">
             <div class="method-title">Key Parameters</div>
             <p><strong>Lambda = 150</strong></p>
-            <p>Controls regularization. Validated against Josh's 3-year RAPM from Cleaning The Glass.</p>
+            <p>Controls regularization. Validated against reference's 3-year RAPM from Cleaning The Glass.</p>
             <br>
             <p><strong>3-Year Rolling Window</strong></p>
             <p>Uses 3 seasons of data to stabilize estimates while remaining current.</p>
@@ -517,7 +495,7 @@ elif page == "The Study":
             <span class="badge badge-warning">NOTE</span>
             <div class="method-title">Lambda Selection</div>
             <p>
-            We chose lambda = 150 based on correlation with Josh's RAPM, not on predicting
+            We chose lambda = 150 based on correlation with reference's RAPM, not on predicting
             actual team wins or game outcomes.
             </p>
             <p style="margin-top: 15px;">
@@ -526,9 +504,6 @@ elif page == "The Study":
         </div>
         """, unsafe_allow_html=True)
 
-# =============================================================================
-# RAPM DATA PAGE
-# =============================================================================
 elif page == "RAPM Data":
     st.markdown('<h2 class="section-title">RAPM by Season</h2>', unsafe_allow_html=True)
 
@@ -581,9 +556,6 @@ elif page == "RAPM Data":
         csv = filtered.to_csv(index=False)
         st.download_button("Download CSV", csv, f"rapm_{season}.csv", "text/csv")
 
-# =============================================================================
-# PLAYER RANKINGS PAGE
-# =============================================================================
 elif page == "Player Rankings":
     st.markdown('<h2 class="section-title">Player Tiers</h2>', unsafe_allow_html=True)
 
@@ -658,9 +630,6 @@ elif page == "Player Rankings":
             </div>
             """, unsafe_allow_html=True)
 
-# =============================================================================
-# ROOKIES & PROSPECTS PAGE
-# =============================================================================
 elif page == "Rookies & Prospects":
     st.markdown('<h2 class="section-title">Rookies & Prospects</h2>', unsafe_allow_html=True)
 
@@ -839,9 +808,6 @@ elif page == "Rookies & Prospects":
             </div>
             """, unsafe_allow_html=True)
 
-# =============================================================================
-# PROJECTIONS PAGE
-# =============================================================================
 elif page == "Projections":
     st.markdown('<h2 class="section-title">Player Projections</h2>', unsafe_allow_html=True)
 
@@ -954,9 +920,6 @@ elif page == "Projections":
             st.metric("5-Year", f"{player.get('proj_5yr', 0):+.2f}",
                       f"{player.get('proj_5yr', 0) - player['total_rapm']:+.2f}")
 
-# =============================================================================
-# FOOTER
-# =============================================================================
 st.markdown("---")
 st.markdown("""
 <div style="text-align: center; padding: 40px; color: #888;">
