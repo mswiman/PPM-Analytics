@@ -178,11 +178,26 @@ if page == "Home":
     completely held-out seasons. This simulates real-world usage where we don't know
     the future.
 
-    **Key Results (1-Year Ahead):**
-    | Model | R² | Correlation | Sample Size |
-    |-------|-----|-------------|-------------|
-    | O-PPM | 0.77 | 0.88 | 1,372 |
-    | D-PPM | 0.73 | 0.86 | 4,642 |
+    **O-PPM Results by Horizon:**
+    | Horizon | R² | Correlation | N |
+    |---------|-----|-------------|-----|
+    | 1yr | 0.77 | 0.88 | 1,372 |
+    | 2yr | 0.64 | 0.80 | 975 |
+    | 3yr | 0.53 | 0.73 | 642 |
+    | 5yr | 0.66 | 0.81 | 291 |
+    | 5-7yr | 0.75 | 0.87 | 196 |
+
+    **D-PPM Results by Horizon:**
+    | Horizon | R² | Correlation | N |
+    |---------|-----|-------------|-----|
+    | 1yr | 0.73 | 0.86 | 4,642 |
+    | 2yr | 0.55 | 0.74 | 3,616 |
+    | 3yr | 0.43 | 0.66 | 2,802 |
+    | 5yr | 0.53 | 0.73 | 1,791 |
+    | 5-7yr | 0.63 | 0.80 | 1,519 |
+
+    **Interpretation:** R² drops at 3-4 years as current RAPM becomes less predictive,
+    then recovers at 5-7 years as career-weighted features and tracking skills dominate.
     """)
 
     st.markdown("---")
@@ -352,6 +367,18 @@ elif page == "O-PPM Model":
     - **Drive rate + drive FG%** identify players who can create at the rim
     - **Shot quality** (pts vs expected) measures shot selection ability
     - **Career-weighted RAPM** provides stability for veterans
+
+    **How Feature Importance Shifts by Horizon:**
+    | Feature | 1yr | 3yr | 5-7yr |
+    |---------|-----|-----|-------|
+    | o_rapm | 76.6% | 32.7% | 17.5% |
+    | potential_ast_per_100 | 5.1% | 14.7% | 32.1% |
+    | drive_rate | 3.9% | 15.0% | 24.6% |
+    | o_rapm_career_wt | 2.7% | 12.8% | 5.3% |
+
+    **Key Insight:** For 1-year predictions, current O-RAPM dominates. For 5-7 year predictions,
+    playmaking (potential assists) and driving ability become the strongest predictors because
+    these skills are more stable and predictive of long-term offensive impact.
     """)
 
     st.markdown("---")
@@ -470,6 +497,19 @@ elif page == "D-PPM Model":
     **Position-Specific Patterns:**
     - **Bigs:** Rim DFG% is most predictive (guards opponent FG% at rim)
     - **Guards:** Steals become more important for perimeter defense
+
+    **How Feature Importance Shifts by Horizon:**
+    | Feature | 1yr | 3yr | 5-7yr |
+    |---------|-----|-----|-------|
+    | d_rapm | 82.4% | 17.1% | 13.2% |
+    | d_rapm_career_wt | 3.0% | 25.0% | 25.3% |
+    | dreb_contest_rate | 3.6% | 22.2% | 24.5% |
+    | rim_dfg | 4.3% | 13.2% | 11.8% |
+    | steals | 4.0% | 14.5% | 13.9% |
+
+    **Key Insight:** D-RAPM importance drops faster than O-RAPM over time. For 5-7 year predictions,
+    career-weighted D-RAPM and contested rebound rate become dominant, suggesting defensive
+    effort/hustle is more stable than raw defensive impact metrics.
     """)
 
     st.markdown("---")
