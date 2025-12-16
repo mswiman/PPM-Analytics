@@ -660,49 +660,98 @@ elif page == "Rookie Priors":
 
     if 'tiers' in data:
         st.markdown("---")
-        st.markdown("### Current Rookies")
+        st.markdown("### 2025 Draft Class (Rookies - 1st Year)")
+        st.markdown("*Current season is 2025-26. These players have ~1 season of NBA data.*")
 
-        rookies = data['tiers'][data['tiers']['player_type'].str.contains('rookie', na=False)]
-        if len(rookies) > 0:
-            rookies = rookies.sort_values('total_rapm', ascending=False)
-            display = rookies[['name', 'team_name', 'draft_position', 'off_poss', 'total_rapm', 'proj_3yr']].copy()
-            display.columns = ['Player', 'Team', 'Pick', 'Poss', 'Adj RAPM', '3yr Proj']
+        rookies_2025 = data['tiers'][data['tiers']['player_type'] == 'rookie_2025']
+        if len(rookies_2025) > 0:
+            rookies_2025 = rookies_2025.sort_values('total_rapm', ascending=False)
+            display = rookies_2025[['name', 'team_name', 'draft_position', 'off_poss', 'total_rapm', 'proj_3yr']].copy()
+            display.columns = ['Player', 'Team', 'Pick', 'Poss', 'Adj RAPM', 'Proj 2029']
             display['Adj RAPM'] = display['Adj RAPM'].apply(lambda x: f"{x:+.2f}")
-            display['3yr Proj'] = display['3yr Proj'].apply(lambda x: f"{x:+.2f}")
+            display['Proj 2029'] = display['Proj 2029'].apply(lambda x: f"{x:+.2f}")
+            st.dataframe(display, hide_index=True, use_container_width=True)
+        else:
+            st.info("No 2025 draft class data available yet.")
+
+        st.markdown("---")
+        st.markdown("### 2024 Draft Class (Sophomores - 2nd Year)")
+        st.markdown("*These players have ~2 seasons of NBA data. Still applying partial priors.*")
+
+        rookies_2024 = data['tiers'][data['tiers']['player_type'] == 'rookie_2024']
+        if len(rookies_2024) > 0:
+            rookies_2024 = rookies_2024.sort_values('total_rapm', ascending=False)
+            display = rookies_2024[['name', 'team_name', 'draft_position', 'off_poss', 'total_rapm', 'proj_3yr']].copy()
+            display.columns = ['Player', 'Team', 'Pick', 'Poss', 'Adj RAPM', 'Proj 2029']
+            display['Adj RAPM'] = display['Adj RAPM'].apply(lambda x: f"{x:+.2f}")
+            display['Proj 2029'] = display['Proj 2029'].apply(lambda x: f"{x:+.2f}")
             st.dataframe(display, hide_index=True, use_container_width=True)
 
 elif page == "Player Rankings":
     st.markdown(f"""
     <div class="header-box">
         <h1>Player Rankings</h1>
-        <p>Tiered by Net RAPM (O-RAPM minus D-RAPM)</p>
+        <p>Projected Net RAPM by Season</p>
         <span class="data-badge">Data as of {DATA_DATE}</span>
     </div>
     """, unsafe_allow_html=True)
 
-    tier_info = {
-        1: ("MVP Caliber", "> +4.0", "#FFD700"),
-        2: ("All-NBA", "+2.0 to +4.0", "#C0C0C0"),
-        3: ("All-Star", "+1.0 to +2.0", "#CD853F"),
-        4: ("Quality Starter", "0.0 to +1.0", "#4682B4"),
-        5: ("Rotation", "-1.5 to 0.0", "#32CD32"),
-        6: ("Bench", "< -1.5", "#808080"),
-    }
+    st.markdown("""
+    **Season Reference:**
+    - Current: 2025-26 season (RAPM window: 2023-24 to 2025-26)
+    - 1yr = End of 2026-27
+    - 3yr = End of 2028-29
+    - 5yr = End of 2030-31
+    """)
 
     if 'tiers' in data:
-        veterans = data['tiers'][data['tiers']['player_type'] == 'veteran']
+        projection_type = st.radio(
+            "Select Projection Horizon",
+            ["Current (2026)", "End of 2027", "End of 2029", "End of 2031"],
+            horizontal=True
+        )
+
+        proj_col_map = {
+            "Current (2026)": "total_rapm",
+            "End of 2027": "proj_1yr",
+            "End of 2029": "proj_3yr",
+            "End of 2031": "proj_5yr"
+        }
+        proj_col = proj_col_map[projection_type]
+
+        tier_info = {
+            1: ("MVP Caliber", "> +4.0", "#FFD700"),
+            2: ("All-NBA", "+2.0 to +4.0", "#C0C0C0"),
+            3: ("All-Star", "+1.0 to +2.0", "#CD853F"),
+            4: ("Quality Starter", "0.0 to +1.0", "#4682B4"),
+            5: ("Rotation", "-1.5 to 0.0", "#32CD32"),
+            6: ("Bench", "< -1.5", "#808080"),
+        }
+
+        all_players = data['tiers'].copy()
+
+        def get_tier(val):
+            if val > 4.0: return 1
+            elif val > 2.0: return 2
+            elif val > 1.0: return 3
+            elif val > 0.0: return 4
+            elif val > -1.5: return 5
+            else: return 6
+
+        all_players['proj_tier'] = all_players[proj_col].apply(get_tier)
+
+        st.markdown(f"### Rankings by {projection_type}")
 
         for tier_num in [1, 2, 3, 4, 5, 6]:
-            tier_players = veterans[veterans['tier'] == tier_num].sort_values('total_rapm', ascending=False)
+            tier_players = all_players[all_players['proj_tier'] == tier_num].sort_values(proj_col, ascending=False)
             if len(tier_players) > 0:
                 name, range_str, color = tier_info[tier_num]
-                st.markdown(f"### Tier {tier_num}: {name} ({range_str})")
+                st.markdown(f"#### Tier {tier_num}: {name} ({range_str})")
 
-                display = tier_players[['name', 'team_name', 'o_rapm', 'd_rapm', 'total_rapm']].head(15).copy()
-                display.columns = ['Player', 'Team', 'O-RAPM', 'D-RAPM', 'Net RAPM']
-                display['O-RAPM'] = display['O-RAPM'].apply(lambda x: f"{x:+.2f}")
-                display['D-RAPM'] = display['D-RAPM'].apply(lambda x: f"{x:+.2f}")
-                display['Net RAPM'] = display['Net RAPM'].apply(lambda x: f"{x:+.2f}")
+                display = tier_players[['name', 'team_name', 'age', 'total_rapm', proj_col]].head(15).copy()
+                display.columns = ['Player', 'Team', 'Age', 'Current RAPM', f'Proj {projection_type}']
+                display['Current RAPM'] = display['Current RAPM'].apply(lambda x: f"{x:+.2f}")
+                display[f'Proj {projection_type}'] = display[f'Proj {projection_type}'].apply(lambda x: f"{x:+.2f}")
                 st.dataframe(display, hide_index=True, use_container_width=True)
 
 elif page == "Projections":
