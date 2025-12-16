@@ -1,0 +1,16 @@
+rapm_lambda: 150
+rapm_cv_r2: 0.68
+rapm_yoy_correlation: 0.3478651332904329
+ppm_1yr_r2: 0.77
+ppm_1yr_correlation: 0.88
+ppm_3yr_r2: 0.53
+ppm_5yr_r2: 0.66
+ppm_7yr_r2: 0.75
+ci_1yr_width: 2.2908137419673387
+ci_3yr_width: 3.436220612951008
+ci_5yr_width: 4.581627483934677
+n_players_analyzed: 350
+n_training_samples: 1691
+best_model: Gradient Boosting
+feature_importance_o_rapm: 0.42
+feature_importance_d_rapm: 0.43
