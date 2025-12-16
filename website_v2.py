@@ -158,12 +158,40 @@ if page == "Home":
 
     st.markdown("### The Process")
     st.markdown("""
-    1. **Calculate RAPM** - Regularized Adjusted Plus-Minus using ridge regression (λ=150) on 3-year rolling windows
-    2. **Build Tracking Features** - Extract predictive stats from NBA tracking data (drives, rim defense, assists, etc.)
-    3. **Train O-PPM** - Gradient boosting model to predict future O-RAPM using current RAPM + tracking features
-    4. **Train D-PPM** - Gradient boosting model to predict future D-RAPM using current RAPM + tracking features
-    5. **Apply Priors for Rookies** - Use Bayesian shrinkage with position-specific tracking priors for low-sample players
-    6. **Validate** - Test on historical out-of-sample data, measure R² and correlation
+    **1. Calculate RAPM (2012-2026)**
+    - Source: Play-by-play stint data from PBPStats.com
+    - Method: Ridge regression (λ=150) on 3-year rolling windows
+    - Windows: 2012-14, 2013-15, 2014-16, ..., 2023-26
+    - Output: O-RAPM and D-RAPM per 100 possessions for each player-window
+
+    **2. Build Tracking Features (2013-2026)**
+    - Source: PBPStats.com tracking data (drives, touches, rim defense, etc.)
+    - Features: secondary_ast_per_100, potential_ast_per_100, drive_rate, drive_fg_pct,
+      rim_dfg, dreb_contest_rate, steals, blocks, o_pts_vs_exp_elite
+    - Per-100 possession rates calculated from raw totals
+
+    **3. Train O-PPM**
+    - Model: Gradient Boosting (100 trees, max_depth=4)
+    - Training: Feature seasons 2012-2022 → Target O-RAPM 2013-2023
+    - Testing: Feature seasons 2022-2023 → Target O-RAPM 2023-2024
+    - Task: Predict O-RAPM 1-7 years into the future
+
+    **4. Train D-PPM**
+    - Model: Gradient Boosting (100 trees, max_depth=4)
+    - Training: Feature seasons 2012-2022 → Target D-RAPM 2013-2023
+    - Testing: Feature seasons 2022-2023 → Target D-RAPM 2023-2024
+    - Task: Predict D-RAPM 1-7 years into the future
+
+    **5. Apply Priors for Low-Sample Players**
+    - Applies to: Rookies (1 year), second-year players (2 years), anyone with <5000 poss
+    - Why: 3-year rolling RAPM requires ~5000+ possessions to stabilize
+    - Method: Bayesian shrinkage toward position-specific tracking priors
+    - O-RAPM prior: Based on secondary assists, drives, playmaking
+    - D-RAPM prior: Bigs use rim_dfg, Guards use steals
+
+    **6. Validate**
+    - Out-of-sample testing on 2023-2024 seasons
+    - Metrics: R², Pearson correlation, sample size at each horizon
     """)
 
     st.markdown("---")
@@ -527,14 +555,22 @@ elif page == "Rookie Priors":
     <div class="header-box">
         <h1>Rookie & Low-Sample Priors</h1>
         <p>How we handle players with limited RAPM data</p>
-        <span class="warning-badge">High uncertainty for rookies</span>
+        <span class="warning-badge">High uncertainty for low-sample players</span>
     </div>
     """, unsafe_allow_html=True)
 
     st.markdown("### The Problem")
     st.markdown("""
-    RAPM requires ~5000+ possessions to stabilize. Rookies often have 1000-3000 possessions.
-    Raw RAPM for rookies is noisy and unreliable.
+    Our RAPM uses **3-year rolling windows** (e.g., 2023-24 to 2025-26). This creates issues:
+
+    | Player Type | Seasons in Window | Typical Possessions | Issue |
+    |-------------|-------------------|---------------------|-------|
+    | Rookies | 1 season | 1,000-2,500 | Only 1/3 of full sample |
+    | 2nd-year | 2 seasons | 2,500-5,000 | Only 2/3 of full sample |
+    | Veterans | 3 seasons | 5,000-15,000 | Full sample, stable |
+
+    RAPM requires ~5,000+ possessions to stabilize. Rookies and second-year players
+    have incomplete windows, making their raw RAPM noisy and unreliable.
     """)
 
     st.markdown("---")
@@ -549,9 +585,13 @@ elif page == "Rookie Priors":
     where: data_weight = possessions / (possessions + 5000)
     ```
 
-    **Example:**
-    - Rookie with 2000 poss: data_weight = 0.29, prior_weight = 0.71
-    - Veteran with 15000 poss: data_weight = 0.75, prior_weight = 0.25
+    **Examples by Player Type:**
+    | Player | Possessions | Data Weight | Prior Weight | Effect |
+    |--------|-------------|-------------|--------------|--------|
+    | Rookie (1500 poss) | 1,500 | 23% | 77% | Heavy shrinkage to prior |
+    | 2nd-year (3500 poss) | 3,500 | 41% | 59% | Moderate shrinkage |
+    | 3rd-year (6000 poss) | 6,000 | 55% | 45% | Balanced |
+    | Veteran (12000 poss) | 12,000 | 71% | 29% | Trust the data |
     """)
 
     st.markdown("---")
