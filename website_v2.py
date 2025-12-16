@@ -270,7 +270,9 @@ elif page == "RAPM Database":
             season = st.selectbox("End Season", seasons)
 
         with col2:
-            min_poss = st.slider("Min Possessions", 500, 10000, 1000, step=500)
+            min_poss = st.slider("Min Possessions", 500, 15000, 5000, step=500)
+
+        st.info("**Note:** RAPM requires ~5,000+ possessions to stabilize. Players below this threshold have high variance and should be interpreted with caution.")
 
         filtered = data['rapm'][
             (data['rapm']['end_season'] == season) &
