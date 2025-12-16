@@ -392,10 +392,22 @@ elif page == "O-PPM Model":
     | drive_fg_pct | FG% on drives | 2.9% |
     | o_rapm_career_wt | Career-weighted O-RAPM | 2.7% |
 
+    **Additional Features (from PBPStats):**
+    | Feature | Description |
+    |---------|-------------|
+    | oreb_per_100 | Offensive rebounds per 100 poss |
+    | fg3a_pct | 3-point attempt rate (3PA / FGA) |
+    | efg_pct | Effective FG% |
+    | ts_pct | True Shooting % |
+    | at_rim_frequency | % of shots at the rim |
+    | at_rim_accuracy | FG% at the rim |
+
     **Why These Features?**
     - **Secondary assists** capture playmaking that doesn't show in box score assists
     - **Drive rate + drive FG%** identify players who can create at the rim
     - **Shot quality** (pts vs expected) measures shot selection ability
+    - **Offensive rebounds** capture second-chance creation
+    - **3-point rate + efficiency** identify modern spacing value
     - **Career-weighted RAPM** provides stability for veterans
 
     **How Feature Importance Shifts by Horizon:**
@@ -518,15 +530,26 @@ elif page == "D-PPM Model":
     | d_rapm_career_wt | Career-weighted D-RAPM | 3.0% |
     | blocks | Total blocks | 2.6% |
 
+    **Additional Features (from PBPStats):**
+    | Feature | Description |
+    |---------|-------------|
+    | blocks_per_100 | Blocks per 100 defensive poss |
+    | deflections | Deflected passes (disruption metric) |
+    | def_rim_fga | Rim shots defended (volume) |
+    | dreb_per_100 | Defensive rebounds per 100 poss |
+    | loose_ball_recoveries | Hustle plays |
+
     **Why These Features?**
     - **Rim DFG%** captures rim protection better than blocks alone
+    - **Blocks** measure shot-blocking ability directly
+    - **Deflections** capture perimeter disruption and active hands
     - **Contested rebound rate** shows active defensive effort
     - **Steals** indicate defensive anticipation (position-dependent)
     - **Career-weighted D-RAPM** stabilizes volatile defensive metrics
 
     **Position-Specific Patterns:**
-    - **Bigs:** Rim DFG% is most predictive (guards opponent FG% at rim)
-    - **Guards:** Steals become more important for perimeter defense
+    - **Bigs:** Rim DFG% and blocks are most predictive
+    - **Guards:** Steals and deflections more important for perimeter defense
 
     **How Feature Importance Shifts by Horizon:**
     | Feature | 1yr | 3yr | 5-7yr |
