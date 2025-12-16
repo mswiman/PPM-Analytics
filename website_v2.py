@@ -786,23 +786,30 @@ elif page == "Projections":
 
         st.markdown("---")
 
+        player_age = int(player['age']) if pd.notna(player['age']) else 25
+
         col1, col2, col3 = st.columns(3)
         with col1:
-            st.metric("1-Year Projection", f"{player.get('proj_1yr', 0):+.2f}",
+            st.metric(f"End of 2027 (Age {player_age + 1})", f"{player.get('proj_1yr', 0):+.2f}",
                       f"{player.get('proj_1yr', 0) - player['total_rapm']:+.2f}")
         with col2:
-            st.metric("3-Year Projection", f"{player.get('proj_3yr', 0):+.2f}",
+            st.metric(f"End of 2029 (Age {player_age + 3})", f"{player.get('proj_3yr', 0):+.2f}",
                       f"{player.get('proj_3yr', 0) - player['total_rapm']:+.2f}")
         with col3:
-            st.metric("5-Year Projection", f"{player.get('proj_5yr', 0):+.2f}",
+            st.metric(f"End of 2031 (Age {player_age + 5})", f"{player.get('proj_5yr', 0):+.2f}",
                       f"{player.get('proj_5yr', 0) - player['total_rapm']:+.2f}")
+
+        if player_age >= 33:
+            st.warning(f"**Age Warning:** {player['name']} will be {player_age + 5} by 2031. Projections for older players have higher uncertainty - decline typically accelerates after age 33.")
 
         if 'trajectories' in data:
             history = data['trajectories'][data['trajectories']['name'] == selected].sort_values('season')
             if len(history) > 0:
                 st.markdown("### Historical RAPM Trajectory")
-                fig = px.line(history, x='season', y='net_rapm', markers=True)
-                fig.update_layout(height=300)
+                # Use total_rapm if net_rapm not available
+                y_col = 'net_rapm' if 'net_rapm' in history.columns else 'total_rapm'
+                fig = px.line(history, x='season', y=y_col, markers=True)
+                fig.update_layout(height=300, yaxis_title='Net RAPM')
                 st.plotly_chart(fig, use_container_width=True)
 
 st.markdown("---")
