@@ -736,7 +736,8 @@ elif page == "Player Rankings":
         all_players = data['tiers'].copy()
 
         def get_tier(val):
-            if val > 4.0: return 1
+            if val <= -10: return 7  # Retired
+            elif val > 4.0: return 1
             elif val > 2.0: return 2
             elif val > 1.0: return 3
             elif val > 0.0: return 4
@@ -744,6 +745,14 @@ elif page == "Player Rankings":
             else: return 6
 
         all_players['proj_tier'] = all_players[proj_col].apply(get_tier)
+
+        # Filter out retired for future projections
+        if proj_col != 'total_rapm':
+            active_players = all_players[all_players['proj_tier'] != 7]
+            retired_count = len(all_players) - len(active_players)
+            if retired_count > 0:
+                st.info(f"**{retired_count} players** projected to be retired by {projection_type} (age 38+ assumed retirement)")
+            all_players = active_players
 
         st.markdown(f"### Rankings by {projection_type}")
 
@@ -788,19 +797,33 @@ elif page == "Projections":
 
         player_age = int(player['age']) if pd.notna(player['age']) else 25
 
+        def format_proj(val, future_age):
+            if val <= -10 or future_age >= 38:
+                return "RETIRED"
+            return f"{val:+.2f}"
+
         col1, col2, col3 = st.columns(3)
         with col1:
-            st.metric(f"End of 2027 (Age {player_age + 1})", f"{player.get('proj_1yr', 0):+.2f}",
-                      f"{player.get('proj_1yr', 0) - player['total_rapm']:+.2f}")
+            proj_1 = player.get('proj_1yr', 0)
+            age_1 = player_age + 1
+            val_1 = format_proj(proj_1, age_1)
+            delta_1 = "" if val_1 == "RETIRED" else f"{proj_1 - player['total_rapm']:+.2f}"
+            st.metric(f"End of 2027 (Age {age_1})", val_1, delta_1 if delta_1 else None)
         with col2:
-            st.metric(f"End of 2029 (Age {player_age + 3})", f"{player.get('proj_3yr', 0):+.2f}",
-                      f"{player.get('proj_3yr', 0) - player['total_rapm']:+.2f}")
+            proj_3 = player.get('proj_3yr', 0)
+            age_3 = player_age + 3
+            val_3 = format_proj(proj_3, age_3)
+            delta_3 = "" if val_3 == "RETIRED" else f"{proj_3 - player['total_rapm']:+.2f}"
+            st.metric(f"End of 2029 (Age {age_3})", val_3, delta_3 if delta_3 else None)
         with col3:
-            st.metric(f"End of 2031 (Age {player_age + 5})", f"{player.get('proj_5yr', 0):+.2f}",
-                      f"{player.get('proj_5yr', 0) - player['total_rapm']:+.2f}")
+            proj_5 = player.get('proj_5yr', 0)
+            age_5 = player_age + 5
+            val_5 = format_proj(proj_5, age_5)
+            delta_5 = "" if val_5 == "RETIRED" else f"{proj_5 - player['total_rapm']:+.2f}"
+            st.metric(f"End of 2031 (Age {age_5})", val_5, delta_5 if delta_5 else None)
 
         if player_age >= 33:
-            st.warning(f"**Age Warning:** {player['name']} will be {player_age + 5} by 2031. Projections for older players have higher uncertainty - decline typically accelerates after age 33.")
+            st.info(f"**Age Curve Applied:** Retirement assumed at age 38. Decay accelerates after 33.")
 
         if 'trajectories' in data:
             history = data['trajectories'][data['trajectories']['name'] == selected].sort_values('season')
