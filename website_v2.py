@@ -397,10 +397,15 @@ elif page == "O-PPM Model":
     |---------|-------------|
     | oreb_per_100 | Offensive rebounds per 100 poss |
     | fg3a_pct | 3-point attempt rate (3PA / FGA) |
-    | efg_pct | Effective FG% |
-    | ts_pct | True Shooting % |
+    | usg_efg_pos_adj | Usage × eFG% (position-adjusted) |
     | at_rim_frequency | % of shots at the rim |
     | at_rim_accuracy | FG% at the rim |
+
+    **Why USG×eFG instead of True Shooting?**
+    - Captures both **volume** (usage) and **efficiency** (eFG%) in one metric
+    - Position-adjusted to compare guards vs bigs fairly
+    - Excludes free throws which are less predictive of future O-RAPM
+    - Better correlation with sustainable offensive impact
 
     **Why These Features?**
     - **Secondary assists** capture playmaking that doesn't show in box score assists
