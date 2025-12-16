@@ -495,22 +495,28 @@ elif page == "O-PPM Model":
 
     st.markdown("#### 4. O-RAPM Prior Calculation")
     st.markdown("""
-    The O-RAPM prior is derived from tracking stats that correlate with offensive impact:
+    The O-RAPM prior is derived from box score and tracking stats (z-scored):
     """)
-    st.latex(r"\text{O\_Prior} = \alpha_0 + \alpha_1 \cdot \text{SecAst}_{100} + \alpha_2 \cdot \text{Drives}_{100} + \alpha_3 \cdot \text{Assists}")
+    st.latex(r"\text{O\_Prior} = \sum_i \alpha_i \cdot z(\text{Feature}_i)")
     st.markdown("""
-    **Coefficients** (derived from linear regression on 2012-2022 data):
-    | Feature | Coefficient | Correlation with O-RAPM |
-    |---------|-------------|-------------------------|
-    | Intercept (α₀) | -0.5 | — |
-    | Secondary Assists per 100 (α₁) | +0.15 | r = 0.23 |
-    | Drives per 100 (α₂) | +0.08 | r = 0.25 |
-    | Total Assists (α₃) | +0.005 | r = 0.32 |
+    **Coefficients** (learned from regression on 2012-2022 RAPM targets):
+    | Feature | Coefficient | Description |
+    |---------|-------------|-------------|
+    | eFG% | +15.0 | Shooting efficiency (more weight than TS%) |
+    | Usage% | +8.0 | Volume of touches/shots |
+    | AST% | +6.0 | Playmaking ability |
+    | TOV% | -10.0 | Turnovers penalized |
+    | OREB% | +3.0 | Offensive rebounding |
+    | FTR | +2.0 | Free throw rate (getting to line) |
 
-    **Example:** A rookie with 2.5 secondary assists/100, 8 drives/100, and 150 assists:
+    **All features are z-scored** (standardized to mean=0, std=1) before applying coefficients.
+    Final prior is scaled to typical RAPM range (-3 to +3).
+
+    **Example:** A player with eFG% z=+1.5 (elite), Usage z=+0.5, AST% z=+1.0, TOV% z=-0.5:
     ```
-    O_Prior = -0.5 + (0.15 × 2.5) + (0.08 × 8) + (0.005 × 150)
-            = -0.5 + 0.375 + 0.64 + 0.75 = +1.27
+    O_Prior_raw = (15×1.5) + (8×0.5) + (6×1.0) + (-10×-0.5) + ...
+                = 22.5 + 4.0 + 6.0 + 5.0 = 37.5 (raw)
+    O_Prior = 37.5 / 10 = +3.75 (scaled)
     ```
     """)
 
@@ -684,38 +690,50 @@ elif page == "D-PPM Model":
     - Individual defense harder to isolate from team defense
     """)
 
-    st.markdown("#### 2. Position-Specific D-RAPM Priors")
+    st.markdown("#### 2. D-RAPM Prior Calculation")
     st.markdown("""
-    We use **different priors for guards vs. bigs** because defensive value manifests differently:
+    The D-RAPM prior uses box score defensive stats (z-scored):
+    """)
+    st.latex(r"\text{D\_Prior} = \sum_i \beta_i \cdot z(\text{Feature}_i)")
+    st.markdown("""
+    **Coefficients** (learned from regression on 2012-2022 RAPM targets):
+    | Feature | Coefficient | Description |
+    |---------|-------------|-------------|
+    | DREB% | +4.0 | Defensive rebounding |
+    | STL per play | +20.0 | Steals (high weight - elite skill) |
+    | BLK% | +8.0 | Shot blocking ability |
+
+    **Note:** Lower D-RAPM = better defense, but these coefficients are for predicting
+    *raw* D-RAPM. The sign convention means more steals/blocks → LOWER D-RAPM → better.
+    """)
+
+    st.markdown("#### 3. Position-Specific Adjustments")
+    st.markdown("""
+    After the base prior, we apply position-specific adjustments:
     """)
 
     col1, col2 = st.columns(2)
     with col1:
         st.markdown("**Guards (below median rim defense attempts):**")
-        st.latex(r"\text{D\_Prior}_{guard} = \beta_0 + \beta_1 \cdot \text{Steals}_{100}")
         st.markdown("""
-        | Coefficient | Value | Justification |
-        |-------------|-------|---------------|
-        | β₀ (intercept) | +0.3 | League avg guard D-RAPM |
-        | β₁ (steals) | -0.15 | r = -0.10 with D-RAPM |
+        - **STL weight increased** (perimeter defense matters more)
+        - **BLK weight decreased** (guards rarely block shots)
+        - Typical prior range: -1.0 to +1.0
 
-        More steals → lower D-RAPM → better defense
+        Elite guard defenders (e.g., Jrue Holiday): D-Prior ≈ -0.8
         """)
 
     with col2:
         st.markdown("**Bigs (above median rim defense attempts):**")
-        st.latex(r"\text{D\_Prior}_{big} = \beta_0 + \beta_1 \cdot \text{RimDFG} + \beta_2 \cdot \text{Blocks}_{100}")
         st.markdown("""
-        | Coefficient | Value | Justification |
-        |-------------|-------|---------------|
-        | β₀ (intercept) | -0.5 | League avg big D-RAPM |
-        | β₁ (rim_dfg) | +3.0 | r = +0.20 with D-RAPM |
-        | β₂ (blocks) | -0.10 | r = -0.29 with D-RAPM |
+        - **BLK weight increased** (rim protection key)
+        - **Rim DFG% added** from tracking data (r = +0.20 with D-RAPM)
+        - Typical prior range: -2.0 to +1.5
 
-        Lower rim FG% + more blocks → better defense
+        Elite rim protectors (e.g., Wembanyama): D-Prior ≈ -1.5 to -2.0
         """)
 
-    st.markdown("#### 3. D-RAPM Prior Examples")
+    st.markdown("#### 4. D-RAPM Prior Examples")
     st.markdown("""
     **Example Guard:** 2.0 steals per 100 possessions
     ```
@@ -743,7 +761,7 @@ elif page == "D-PPM Model":
     shrinkage—the model recognizes elite rim protection as a strong predictor.
     """)
 
-    st.markdown("#### 4. Full D-PPM Projection Formula")
+    st.markdown("#### 5. Full D-PPM Projection Formula")
     st.latex(r"\hat{D}_{t+k} = f_{GB}\left( w \cdot D_t + (1-w) \cdot \text{D\_Prior}_{pos}, \, \text{Features}_t \right)")
     st.markdown("""
     Where **Features_t** includes:
@@ -880,13 +898,13 @@ elif page == "Player Rankings":
     st.markdown("""
     **Season Reference:**
     - Current: 3-year rolling RAPM (2022-23 to 2024-25)
-    - Projections use O-PPM and D-PPM trained models
+    - Projections use O-PPM and D-PPM trained models (1yr to 7yr horizons)
     """)
 
     if 'tiers' in data:
         projection_type = st.radio(
             "Select Projection Horizon",
-            ["Current (2022-25)", "End of 2025-26", "End of 2027-28", "End of 2029-30"],
+            ["Current (2022-25)", "End of 2025-26", "End of 2027-28", "End of 2029-30", "End of 2031-32"],
             horizontal=True
         )
 
@@ -894,7 +912,8 @@ elif page == "Player Rankings":
             "Current (2022-25)": "total_rapm",
             "End of 2025-26": "proj_1yr",
             "End of 2027-28": "proj_3yr",
-            "End of 2029-30": "proj_5yr"
+            "End of 2029-30": "proj_5yr",
+            "End of 2031-32": "proj_7yr"
         }
         proj_col = proj_col_map[projection_type]
 
@@ -976,7 +995,7 @@ elif page == "Projections":
                 return "RETIRED"
             return f"{val:+.2f}"
 
-        col1, col2, col3 = st.columns(3)
+        col1, col2, col3, col4 = st.columns(4)
         with col1:
             proj_1 = player.get('proj_1yr', 0)
             age_1 = player_age + 1
@@ -995,6 +1014,12 @@ elif page == "Projections":
             val_5 = format_proj(proj_5, age_5)
             delta_5 = "" if val_5 == "RETIRED" else f"{proj_5 - player['total_rapm']:+.2f}"
             st.metric(f"End of 2029-30 (Age {age_5})", val_5, delta_5 if delta_5 else None)
+        with col4:
+            proj_7 = player.get('proj_7yr', 0)
+            age_7 = player_age + 7
+            val_7 = format_proj(proj_7, age_7)
+            delta_7 = "" if val_7 == "RETIRED" else f"{proj_7 - player['total_rapm']:+.2f}"
+            st.metric(f"End of 2031-32 (Age {age_7})", val_7, delta_7 if delta_7 else None)
 
         if player_age >= 33:
             st.info(f"**Age Curve Applied:** Retirement assumed at age 38. Decay accelerates after 33.")
