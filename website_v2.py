@@ -1,5 +1,5 @@
 """
-CTG Analytics - NBA Player Evaluation Platform
+PPM Analytics - NBA Player Evaluation Platform
 """
 import streamlit as st
 import pandas as pd
@@ -13,7 +13,7 @@ import os
 # PAGE CONFIG
 # =============================================================================
 st.set_page_config(
-    page_title="CTG Analytics",
+    page_title="PPM Analytics",
     page_icon="",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -264,7 +264,7 @@ data = load_data()
 with st.sidebar:
     st.markdown("""
     <div style="padding: 20px; text-align: center;">
-        <h2 style="color: white; font-family: 'Playfair Display', serif; font-size: 28px;">CTG</h2>
+        <h2 style="color: white; font-family: 'Playfair Display', serif; font-size: 28px;">PPM</h2>
         <p style="color: #888; font-size: 12px; letter-spacing: 2px;">ANALYTICS</p>
     </div>
     """, unsafe_allow_html=True)
@@ -311,7 +311,7 @@ if page == "Home":
     # Hero
     st.markdown("""
     <div class="hero">
-        <h1>CTG Analytics</h1>
+        <h1>PPM Analytics</h1>
         <p class="hero-sub">Advanced NBA Player Evaluation</p>
     </div>
     """, unsafe_allow_html=True)
@@ -960,7 +960,7 @@ elif page == "Projections":
 st.markdown("---")
 st.markdown("""
 <div style="text-align: center; padding: 40px; color: #888;">
-    <p style="font-family: 'Playfair Display', serif; font-size: 24px; color: #1a1a1a;">CTG Analytics</p>
+    <p style="font-family: 'Playfair Display', serif; font-size: 24px; color: #1a1a1a;">PPM Analytics</p>
     <p>Data: PBPStats, NBA.com, Cleaning The Glass</p>
     <p>Built with Python, Streamlit, Plotly</p>
 </div>
