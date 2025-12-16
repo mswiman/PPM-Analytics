@@ -1451,26 +1451,39 @@ elif page == "Key Takeaways":
         |--------|-------|
         | Current RAPM | +4.84 |
         | O-RAPM | +1.03 |
-        | D-RAPM | -2.49 |
+        | D-RAPM | -2.49 (elite) |
         | Possessions | 13,612 |
-        | **2026 Proj** | **+0.67** |
+
+        **Full Trajectory:**
+        | Season | Projection | Rank |
+        |--------|------------|------|
+        | 2026 | +0.67 | #105 |
+        | 2028 | +0.59 | #94 |
+        | 2030 | +0.54 | #80 |
+        | 2032 | +0.46 | #78 |
         """)
 
     with col2:
         st.markdown("""
-        **Model Analysis:**
+        **Why This Projection is Controversial:**
 
-        Despite elite current numbers (+4.84), the model projects significant regression:
+        The model shows **massive regression** from +4.84 to ~+0.5. This is one of the
+        most debatable projections in the system. Here's the model's reasoning:
 
-        1. **Historical pattern:** Traditional bigs often decline as league adjusts
-        2. **Scheme fit:** Current success may be Memphis-specific
-        3. **Playoff concerns:** Rim-only bigs get exploited in playoffs
-        4. **Age curve for bigs:** Peak earlier, decline faster than wings
+        **Model's Case (Why Regression):**
+        1. Historical pattern: Traditional rim-only bigs (Drummond, Whiteside, etc.) often regress as teams adjust
+        2. Playoff liability: 7'4" centers get schemed off the court in playoff switching
+        3. Offensive limitations: +1.03 O-RAPM suggests limited creation ability
+        4. League trend: 5-out offenses reduce value of non-shooting bigs
 
-        **Counter-argument:** Elite rim protection (-2.49 D-RAPM) is rare and valuable.
-        Model may underweight defensive impact for traditional centers.
+        **Counter-Case (Why Model May Be Wrong):**
+        1. Elite D-RAPM (-2.49) is genuinely rare - only ~10 players this good
+        2. 13,612 possessions = huge sample, not noise
+        3. Memphis built around his strengths successfully
+        4. Size + skill combo (baby hook) may be more durable than pure athletes
 
-        *High variance projection - could go either way*
+        **Verdict:** High uncertainty. Model treats him like historical comps,
+        but Edey may be a unique case. **Use wide confidence intervals.**
         """)
 
     st.markdown("### Declining Stars (Age 26-27)")
