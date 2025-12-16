@@ -1,0 +1,6 @@
+data_as_of: 2025-12-16
+rapm_seasons: 2023-24 to 2025-26 (3-year rolling)
+tracking_season: 2025-26
+min_possessions: 1000
+n_players_analyzed: 424
+sources: ['PBPStats.com (tracking data)', 'Own RAPM calculations (ridge regression, lambda=150)']

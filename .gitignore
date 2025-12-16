@@ -1,0 +1,16 @@
+# Default: Ignore everything
+*
+
+# Whitelist - only include these files for Streamlit deployment
+!.gitignore
+!requirements.txt
+!website_v2.py
+!rapm_rolling_all_years.csv
+!rapm_priors.csv
+
+# Include website_data folder and its contents
+!website_data/
+!website_data/*
+
+# Do not include pbpstats_data (even if in website_data)
+website_data/pbpstats*/

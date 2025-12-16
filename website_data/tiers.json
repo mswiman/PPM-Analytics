@@ -1,0 +1,3020 @@
+[
+  {
+    "tier": 1,
+    "name": "MVP Caliber",
+    "color": "#FFD700",
+    "count": 25,
+    "players": [
+      {
+        "name": "Nikola Jokic",
+        "age": 29,
+        "team": "DEN",
+        "position": 0,
+        "current": {
+          "o_rapm": 6.98,
+          "d_rapm": -2.28,
+          "total_rapm": 9.27,
+          "tier": 1,
+          "tier_name": "MVP Caliber"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 6.16,
+            "tier": 1
+          },
+          "3yr": {
+            "rapm": 5.62,
+            "tier": 1
+          },
+          "5yr": {
+            "rapm": 5.08,
+            "tier": 1
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 70
+      },
+      {
+        "name": "Joel Embiid",
+        "age": 30,
+        "team": "PHI",
+        "position": 0,
+        "current": {
+          "o_rapm": 3.57,
+          "d_rapm": -3.0,
+          "total_rapm": 6.57,
+          "tier": 1,
+          "tier_name": "MVP Caliber"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 5.47,
+            "tier": 1
+          },
+          "3yr": {
+            "rapm": 4.93,
+            "tier": 1
+          },
+          "5yr": {
+            "rapm": 4.39,
+            "tier": 1
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 19
+      },
+      {
+        "name": "Paul George",
+        "age": 34,
+        "team": "PHI",
+        "position": 0,
+        "current": {
+          "o_rapm": 3.84,
+          "d_rapm": -2.41,
+          "total_rapm": 6.25,
+          "tier": 1,
+          "tier_name": "MVP Caliber"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 5.43,
+            "tier": 1
+          },
+          "3yr": {
+            "rapm": 4.89,
+            "tier": 1
+          },
+          "5yr": {
+            "rapm": 4.35,
+            "tier": 1
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 41
+      },
+      {
+        "name": "Giannis Antetokounmpo",
+        "age": 29,
+        "team": "MIL",
+        "position": 0,
+        "current": {
+          "o_rapm": 3.75,
+          "d_rapm": -2.19,
+          "total_rapm": 5.94,
+          "tier": 1,
+          "tier_name": "MVP Caliber"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 4.84,
+            "tier": 1
+          },
+          "3yr": {
+            "rapm": 4.3,
+            "tier": 1
+          },
+          "5yr": {
+            "rapm": 3.76,
+            "tier": 2
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": 0,
+          "5yr": -1
+        },
+        "games": 67
+      },
+      {
+        "name": "Kyrie Irving",
+        "age": 32,
+        "team": "DAL",
+        "position": 0,
+        "current": {
+          "o_rapm": 5.34,
+          "d_rapm": -0.5,
+          "total_rapm": 5.84,
+          "tier": 1,
+          "tier_name": "MVP Caliber"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 3.11,
+            "tier": 2
+          },
+          "3yr": {
+            "rapm": 2.57,
+            "tier": 2
+          },
+          "5yr": {
+            "rapm": 2.03,
+            "tier": 2
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -1,
+          "5yr": -1
+        },
+        "games": 50
+      },
+      {
+        "name": "Jrue Holiday",
+        "age": 34,
+        "team": "BOS",
+        "position": 0,
+        "current": {
+          "o_rapm": 3.94,
+          "d_rapm": -1.3,
+          "total_rapm": 5.24,
+          "tier": 1,
+          "tier_name": "MVP Caliber"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 4.48,
+            "tier": 1
+          },
+          "3yr": {
+            "rapm": 3.94,
+            "tier": 2
+          },
+          "5yr": {
+            "rapm": 3.4,
+            "tier": 2
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": -1,
+          "5yr": -1
+        },
+        "games": 62
+      },
+      {
+        "name": "Kawhi Leonard",
+        "age": 33,
+        "team": "LAC",
+        "position": 0,
+        "current": {
+          "o_rapm": 3.15,
+          "d_rapm": -2.09,
+          "total_rapm": 5.24,
+          "tier": 1,
+          "tier_name": "MVP Caliber"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 5.46,
+            "tier": 1
+          },
+          "3yr": {
+            "rapm": 4.92,
+            "tier": 1
+          },
+          "5yr": {
+            "rapm": 4.38,
+            "tier": 1
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 37
+      },
+      {
+        "name": "Chet Holmgren",
+        "age": 22,
+        "team": "OKC",
+        "position": 0,
+        "current": {
+          "o_rapm": 3.26,
+          "d_rapm": -1.9,
+          "total_rapm": 5.17,
+          "tier": 1,
+          "tier_name": "MVP Caliber"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 5.47,
+            "tier": 1
+          },
+          "3yr": {
+            "rapm": 6.07,
+            "tier": 1
+          },
+          "5yr": {
+            "rapm": 6.59,
+            "tier": 1
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 32
+      },
+      {
+        "name": "Jayson Tatum",
+        "age": 26,
+        "team": "BOS",
+        "position": 0,
+        "current": {
+          "o_rapm": 3.89,
+          "d_rapm": -1.16,
+          "total_rapm": 5.05,
+          "tier": 1,
+          "tier_name": "MVP Caliber"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 5.37,
+            "tier": 1
+          },
+          "3yr": {
+            "rapm": 4.99,
+            "tier": 1
+          },
+          "5yr": {
+            "rapm": 4.45,
+            "tier": 1
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 72
+      },
+      {
+        "name": "Draymond Green",
+        "age": 34,
+        "team": "GSW",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.56,
+          "d_rapm": -4.35,
+          "total_rapm": 4.91,
+          "tier": 1,
+          "tier_name": "MVP Caliber"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 3.98,
+            "tier": 2
+          },
+          "3yr": {
+            "rapm": 3.44,
+            "tier": 2
+          },
+          "5yr": {
+            "rapm": 2.9,
+            "tier": 2
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -1,
+          "5yr": -1
+        },
+        "games": 68
+      },
+      {
+        "name": "Kevin Durant",
+        "age": 36,
+        "team": "PHX",
+        "position": 0,
+        "current": {
+          "o_rapm": 3.79,
+          "d_rapm": -1.03,
+          "total_rapm": 4.82,
+          "tier": 1,
+          "tier_name": "MVP Caliber"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 5.01,
+            "tier": 1
+          },
+          "3yr": {
+            "rapm": 4.47,
+            "tier": 1
+          },
+          "5yr": {
+            "rapm": 3.93,
+            "tier": 2
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": 0,
+          "5yr": -1
+        },
+        "games": 62
+      },
+      {
+        "name": "Stephen Curry",
+        "age": 36,
+        "team": "GSW",
+        "position": 0,
+        "current": {
+          "o_rapm": 4.33,
+          "d_rapm": -0.47,
+          "total_rapm": 4.8,
+          "tier": 1,
+          "tier_name": "MVP Caliber"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 5.43,
+            "tier": 1
+          },
+          "3yr": {
+            "rapm": 4.89,
+            "tier": 1
+          },
+          "5yr": {
+            "rapm": 4.35,
+            "tier": 1
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 70
+      },
+      {
+        "name": "LeBron James",
+        "age": 39,
+        "team": "LAL",
+        "position": 0,
+        "current": {
+          "o_rapm": 3.86,
+          "d_rapm": -0.71,
+          "total_rapm": 4.56,
+          "tier": 1,
+          "tier_name": "MVP Caliber"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 5.53,
+            "tier": 1
+          },
+          "3yr": {
+            "rapm": 4.99,
+            "tier": 1
+          },
+          "5yr": {
+            "rapm": 4.45,
+            "tier": 1
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 70
+      },
+      {
+        "name": "Derrick White",
+        "age": 30,
+        "team": "BOS",
+        "position": 0,
+        "current": {
+          "o_rapm": 1.63,
+          "d_rapm": -2.73,
+          "total_rapm": 4.35,
+          "tier": 1,
+          "tier_name": "MVP Caliber"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 3.39,
+            "tier": 2
+          },
+          "3yr": {
+            "rapm": 2.85,
+            "tier": 2
+          },
+          "5yr": {
+            "rapm": 2.31,
+            "tier": 2
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -1,
+          "5yr": -1
+        },
+        "games": 76
+      },
+      {
+        "name": "Myles Turner",
+        "age": 28,
+        "team": "IND",
+        "position": 0,
+        "current": {
+          "o_rapm": 2.86,
+          "d_rapm": -1.33,
+          "total_rapm": 4.19,
+          "tier": 1,
+          "tier_name": "MVP Caliber"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.9,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 1.36,
+            "tier": 3
+          },
+          "5yr": {
+            "rapm": 0.82,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": -2,
+          "3yr": -2,
+          "5yr": -3
+        },
+        "games": 72
+      }
+    ]
+  },
+  {
+    "tier": 2,
+    "name": "All-NBA",
+    "color": "#C0C0C0",
+    "count": 87,
+    "players": [
+      {
+        "name": "Damian Lillard",
+        "age": 34,
+        "team": "MIL",
+        "position": 0,
+        "current": {
+          "o_rapm": 5.0,
+          "d_rapm": 1.03,
+          "total_rapm": 3.98,
+          "tier": 2,
+          "tier_name": "All-NBA"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 3.24,
+            "tier": 2
+          },
+          "3yr": {
+            "rapm": 2.7,
+            "tier": 2
+          },
+          "5yr": {
+            "rapm": 2.16,
+            "tier": 2
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 58
+      },
+      {
+        "name": "Shai Gilgeous-Alexander",
+        "age": 26,
+        "team": "OKC",
+        "position": 0,
+        "current": {
+          "o_rapm": 3.43,
+          "d_rapm": -0.47,
+          "total_rapm": 3.9,
+          "tier": 2,
+          "tier_name": "All-NBA"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.42,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 1.08,
+            "tier": 3
+          },
+          "5yr": {
+            "rapm": 0.54,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -1,
+          "5yr": -2
+        },
+        "games": 76
+      },
+      {
+        "name": "Kenrich Williams",
+        "age": 29,
+        "team": "OKC",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.64,
+          "d_rapm": -3.2,
+          "total_rapm": 3.84,
+          "tier": 2,
+          "tier_name": "All-NBA"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 2.21,
+            "tier": 2
+          },
+          "3yr": {
+            "rapm": 1.67,
+            "tier": 3
+          },
+          "5yr": {
+            "rapm": 1.13,
+            "tier": 3
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": -1,
+          "5yr": -1
+        },
+        "games": 69
+      },
+      {
+        "name": "Aaron Gordon",
+        "age": 29,
+        "team": "DEN",
+        "position": 0,
+        "current": {
+          "o_rapm": 2.17,
+          "d_rapm": -1.65,
+          "total_rapm": 3.82,
+          "tier": 2,
+          "tier_name": "All-NBA"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 2.29,
+            "tier": 2
+          },
+          "3yr": {
+            "rapm": 1.75,
+            "tier": 3
+          },
+          "5yr": {
+            "rapm": 1.21,
+            "tier": 3
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": -1,
+          "5yr": -1
+        },
+        "games": 51
+      },
+      {
+        "name": "Jose Alvarado",
+        "age": 26,
+        "team": "NOP",
+        "position": 0,
+        "current": {
+          "o_rapm": 1.06,
+          "d_rapm": -2.76,
+          "total_rapm": 3.82,
+          "tier": 2,
+          "tier_name": "All-NBA"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 3.08,
+            "tier": 2
+          },
+          "3yr": {
+            "rapm": 2.71,
+            "tier": 2
+          },
+          "5yr": {
+            "rapm": 2.17,
+            "tier": 2
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 56
+      },
+      {
+        "name": "Jalen Brunson",
+        "age": 28,
+        "team": "NYK",
+        "position": 0,
+        "current": {
+          "o_rapm": 4.29,
+          "d_rapm": 0.53,
+          "total_rapm": 3.76,
+          "tier": 2,
+          "tier_name": "All-NBA"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.84,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 1.3,
+            "tier": 3
+          },
+          "5yr": {
+            "rapm": 0.76,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -1,
+          "5yr": -2
+        },
+        "games": 65
+      },
+      {
+        "name": "Bogdan Bogdanovic",
+        "age": 32,
+        "team": "LAC",
+        "position": 0,
+        "current": {
+          "o_rapm": 3.43,
+          "d_rapm": -0.26,
+          "total_rapm": 3.69,
+          "tier": 2,
+          "tier_name": "All-NBA"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.77,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 1.23,
+            "tier": 3
+          },
+          "5yr": {
+            "rapm": 0.69,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -1,
+          "5yr": -2
+        },
+        "games": 30
+      },
+      {
+        "name": "Bogdan Bogdanovic",
+        "age": 32,
+        "team": "ATL",
+        "position": 0,
+        "current": {
+          "o_rapm": 3.43,
+          "d_rapm": -0.26,
+          "total_rapm": 3.69,
+          "tier": 2,
+          "tier_name": "All-NBA"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.77,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 1.23,
+            "tier": 3
+          },
+          "5yr": {
+            "rapm": 0.69,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -1,
+          "5yr": -2
+        },
+        "games": 30
+      },
+      {
+        "name": "Bogdan Bogdanovic",
+        "age": 32,
+        "team": "LAC",
+        "position": 0,
+        "current": {
+          "o_rapm": 3.43,
+          "d_rapm": -0.26,
+          "total_rapm": 3.69,
+          "tier": 2,
+          "tier_name": "All-NBA"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.77,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 1.23,
+            "tier": 3
+          },
+          "5yr": {
+            "rapm": 0.69,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -1,
+          "5yr": -2
+        },
+        "games": 30
+      },
+      {
+        "name": "Bogdan Bogdanovic",
+        "age": 32,
+        "team": "ATL",
+        "position": 0,
+        "current": {
+          "o_rapm": 3.43,
+          "d_rapm": -0.26,
+          "total_rapm": 3.69,
+          "tier": 2,
+          "tier_name": "All-NBA"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.77,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 1.23,
+            "tier": 3
+          },
+          "5yr": {
+            "rapm": 0.69,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -1,
+          "5yr": -2
+        },
+        "games": 30
+      },
+      {
+        "name": "Bogdan Bogdanovic",
+        "age": 32,
+        "team": "LAC",
+        "position": 0,
+        "current": {
+          "o_rapm": 3.43,
+          "d_rapm": -0.26,
+          "total_rapm": 3.69,
+          "tier": 2,
+          "tier_name": "All-NBA"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.77,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 1.23,
+            "tier": 3
+          },
+          "5yr": {
+            "rapm": 0.69,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -1,
+          "5yr": -2
+        },
+        "games": 24
+      },
+      {
+        "name": "Bogdan Bogdanovic",
+        "age": 32,
+        "team": "ATL",
+        "position": 0,
+        "current": {
+          "o_rapm": 3.43,
+          "d_rapm": -0.26,
+          "total_rapm": 3.69,
+          "tier": 2,
+          "tier_name": "All-NBA"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.77,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 1.23,
+            "tier": 3
+          },
+          "5yr": {
+            "rapm": 0.69,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -1,
+          "5yr": -2
+        },
+        "games": 24
+      },
+      {
+        "name": "Bogdan Bogdanovic",
+        "age": 32,
+        "team": "LAC",
+        "position": 0,
+        "current": {
+          "o_rapm": 3.43,
+          "d_rapm": -0.26,
+          "total_rapm": 3.69,
+          "tier": 2,
+          "tier_name": "All-NBA"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.77,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 1.23,
+            "tier": 3
+          },
+          "5yr": {
+            "rapm": 0.69,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -1,
+          "5yr": -2
+        },
+        "games": 24
+      },
+      {
+        "name": "Bogdan Bogdanovic",
+        "age": 32,
+        "team": "ATL",
+        "position": 0,
+        "current": {
+          "o_rapm": 3.43,
+          "d_rapm": -0.26,
+          "total_rapm": 3.69,
+          "tier": 2,
+          "tier_name": "All-NBA"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.77,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 1.23,
+            "tier": 3
+          },
+          "5yr": {
+            "rapm": 0.69,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -1,
+          "5yr": -2
+        },
+        "games": 24
+      },
+      {
+        "name": "Devin Booker",
+        "age": 28,
+        "team": "PHX",
+        "position": 0,
+        "current": {
+          "o_rapm": 4.73,
+          "d_rapm": 1.12,
+          "total_rapm": 3.6,
+          "tier": 2,
+          "tier_name": "All-NBA"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 2.34,
+            "tier": 2
+          },
+          "3yr": {
+            "rapm": 1.8,
+            "tier": 3
+          },
+          "5yr": {
+            "rapm": 1.26,
+            "tier": 3
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": -1,
+          "5yr": -1
+        },
+        "games": 75
+      }
+    ]
+  },
+  {
+    "tier": 3,
+    "name": "All-Star",
+    "color": "#CD7F32",
+    "count": 71,
+    "players": [
+      {
+        "name": "De'Anthony Melton",
+        "age": 26,
+        "team": "GSW",
+        "position": 0,
+        "current": {
+          "o_rapm": 1.41,
+          "d_rapm": -0.54,
+          "total_rapm": 1.95,
+          "tier": 3,
+          "tier_name": "All-Star"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 2.03,
+            "tier": 2
+          },
+          "3yr": {
+            "rapm": 1.68,
+            "tier": 3
+          },
+          "5yr": {
+            "rapm": 1.14,
+            "tier": 3
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 6
+      },
+      {
+        "name": "Zion Williamson",
+        "age": 24,
+        "team": "NOP",
+        "position": 0,
+        "current": {
+          "o_rapm": 1.11,
+          "d_rapm": -0.82,
+          "total_rapm": 1.94,
+          "tier": 3,
+          "tier_name": "All-Star"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 2.24,
+            "tier": 2
+          },
+          "3yr": {
+            "rapm": 2.19,
+            "tier": 2
+          },
+          "5yr": {
+            "rapm": 1.85,
+            "tier": 3
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 1,
+          "5yr": 0
+        },
+        "games": 30
+      },
+      {
+        "name": "Monte Morris",
+        "age": 29,
+        "team": "PHX",
+        "position": 0,
+        "current": {
+          "o_rapm": 2.65,
+          "d_rapm": 0.74,
+          "total_rapm": 1.91,
+          "tier": 3,
+          "tier_name": "All-Star"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 0.56,
+            "tier": 4
+          },
+          "3yr": {
+            "rapm": 0.02,
+            "tier": 4
+          },
+          "5yr": {
+            "rapm": -0.52,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -1,
+          "5yr": -2
+        },
+        "games": 38
+      },
+      {
+        "name": "Josh Hart",
+        "age": 29,
+        "team": "NYK",
+        "position": 0,
+        "current": {
+          "o_rapm": 1.33,
+          "d_rapm": -0.55,
+          "total_rapm": 1.89,
+          "tier": 3,
+          "tier_name": "All-Star"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 0.62,
+            "tier": 4
+          },
+          "3yr": {
+            "rapm": 0.08,
+            "tier": 4
+          },
+          "5yr": {
+            "rapm": -0.46,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -1,
+          "5yr": -2
+        },
+        "games": 77
+      },
+      {
+        "name": "Joe Ingles",
+        "age": 37,
+        "team": "MIN",
+        "position": 0,
+        "current": {
+          "o_rapm": 1.61,
+          "d_rapm": -0.26,
+          "total_rapm": 1.88,
+          "tier": 3,
+          "tier_name": "All-Star"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.46,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 0.92,
+            "tier": 4
+          },
+          "5yr": {
+            "rapm": 0.38,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": -1,
+          "5yr": -1
+        },
+        "games": 18
+      },
+      {
+        "name": "Naji Marshall",
+        "age": 26,
+        "team": "DAL",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.42,
+          "d_rapm": -1.4,
+          "total_rapm": 1.82,
+          "tier": 3,
+          "tier_name": "All-Star"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 0.3,
+            "tier": 4
+          },
+          "3yr": {
+            "rapm": -0.09,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -0.63,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -2,
+          "5yr": -2
+        },
+        "games": 69
+      },
+      {
+        "name": "Jarrett Allen",
+        "age": 26,
+        "team": "CLE",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.75,
+          "d_rapm": -1.0,
+          "total_rapm": 1.74,
+          "tier": 3,
+          "tier_name": "All-Star"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 0.99,
+            "tier": 4
+          },
+          "3yr": {
+            "rapm": 0.63,
+            "tier": 4
+          },
+          "5yr": {
+            "rapm": 0.09,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -1,
+          "5yr": -1
+        },
+        "games": 82
+      },
+      {
+        "name": "Mitchell Robinson",
+        "age": 26,
+        "team": "NYK",
+        "position": 0,
+        "current": {
+          "o_rapm": 1.92,
+          "d_rapm": 0.24,
+          "total_rapm": 1.68,
+          "tier": 3,
+          "tier_name": "All-Star"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 0.5,
+            "tier": 4
+          },
+          "3yr": {
+            "rapm": 0.13,
+            "tier": 4
+          },
+          "5yr": {
+            "rapm": -0.41,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -1,
+          "5yr": -2
+        },
+        "games": 17
+      },
+      {
+        "name": "Goga Bitadze",
+        "age": 25,
+        "team": "ORL",
+        "position": 0,
+        "current": {
+          "o_rapm": 1.89,
+          "d_rapm": 0.24,
+          "total_rapm": 1.65,
+          "tier": 3,
+          "tier_name": "All-Star"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 0.55,
+            "tier": 4
+          },
+          "3yr": {
+            "rapm": 0.36,
+            "tier": 4
+          },
+          "5yr": {
+            "rapm": -0.1,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -1,
+          "5yr": -2
+        },
+        "games": 69
+      },
+      {
+        "name": "Ja Morant",
+        "age": 25,
+        "team": "MEM",
+        "position": 0,
+        "current": {
+          "o_rapm": 1.77,
+          "d_rapm": 0.14,
+          "total_rapm": 1.62,
+          "tier": 3,
+          "tier_name": "All-Star"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.24,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 1.06,
+            "tier": 3
+          },
+          "5yr": {
+            "rapm": 0.61,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": 0,
+          "5yr": -1
+        },
+        "games": 50
+      },
+      {
+        "name": "Payton Pritchard",
+        "age": 26,
+        "team": "BOS",
+        "position": 0,
+        "current": {
+          "o_rapm": 2.15,
+          "d_rapm": 0.56,
+          "total_rapm": 1.59,
+          "tier": 3,
+          "tier_name": "All-Star"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -0.05,
+            "tier": 5
+          },
+          "3yr": {
+            "rapm": -0.44,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -0.98,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": -2,
+          "3yr": -2,
+          "5yr": -2
+        },
+        "games": 80
+      },
+      {
+        "name": "Larry Nance Jr.",
+        "age": 31,
+        "team": "ATL",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.24,
+          "d_rapm": -1.32,
+          "total_rapm": 1.56,
+          "tier": 3,
+          "tier_name": "All-Star"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 0.19,
+            "tier": 4
+          },
+          "3yr": {
+            "rapm": -0.35,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -0.89,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -2,
+          "5yr": -2
+        },
+        "games": 24
+      },
+      {
+        "name": "Tari Eason",
+        "age": 23,
+        "team": "HOU",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.2,
+          "d_rapm": -1.32,
+          "total_rapm": 1.52,
+          "tier": 3,
+          "tier_name": "All-Star"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.3,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 1.3,
+            "tier": 3
+          },
+          "5yr": {
+            "rapm": 1.07,
+            "tier": 3
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 57
+      },
+      {
+        "name": "Luke Kennard",
+        "age": 28,
+        "team": "MEM",
+        "position": 0,
+        "current": {
+          "o_rapm": 1.19,
+          "d_rapm": -0.33,
+          "total_rapm": 1.52,
+          "tier": 3,
+          "tier_name": "All-Star"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 0.26,
+            "tier": 4
+          },
+          "3yr": {
+            "rapm": -0.28,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -0.82,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -2,
+          "5yr": -2
+        },
+        "games": 65
+      },
+      {
+        "name": "De'Aaron Fox",
+        "age": 26,
+        "team": "SAS",
+        "position": 0,
+        "current": {
+          "o_rapm": 2.4,
+          "d_rapm": 0.9,
+          "total_rapm": 1.49,
+          "tier": 3,
+          "tier_name": "All-Star"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -0.44,
+            "tier": 5
+          },
+          "3yr": {
+            "rapm": -0.85,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -1.39,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": -2,
+          "3yr": -2,
+          "5yr": -2
+        },
+        "games": 17
+      }
+    ]
+  },
+  {
+    "tier": 4,
+    "name": "Quality Starter",
+    "color": "#4169E1",
+    "count": 91,
+    "players": [
+      {
+        "name": "John Konchar",
+        "age": 28,
+        "team": "MEM",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.04,
+          "d_rapm": -0.93,
+          "total_rapm": 0.96,
+          "tier": 4,
+          "tier_name": "Quality Starter"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.02,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 0.48,
+            "tier": 4
+          },
+          "5yr": {
+            "rapm": -0.06,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 0,
+          "5yr": -1
+        },
+        "games": 36
+      },
+      {
+        "name": "James Harden",
+        "age": 35,
+        "team": "LAC",
+        "position": 0,
+        "current": {
+          "o_rapm": 2.79,
+          "d_rapm": 1.88,
+          "total_rapm": 0.91,
+          "tier": 4,
+          "tier_name": "Quality Starter"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 2.15,
+            "tier": 2
+          },
+          "3yr": {
+            "rapm": 1.61,
+            "tier": 3
+          },
+          "5yr": {
+            "rapm": 1.07,
+            "tier": 3
+          }
+        },
+        "tier_changes": {
+          "1yr": 2,
+          "3yr": 1,
+          "5yr": 1
+        },
+        "games": 79
+      },
+      {
+        "name": "Andre Drummond",
+        "age": 31,
+        "team": "PHI",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.66,
+          "d_rapm": -0.24,
+          "total_rapm": 0.9,
+          "tier": 4,
+          "tier_name": "Quality Starter"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -0.54,
+            "tier": 5
+          },
+          "3yr": {
+            "rapm": -1.08,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -1.62,
+            "tier": 6
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -1,
+          "5yr": -2
+        },
+        "games": 40
+      },
+      {
+        "name": "Julius Randle",
+        "age": 29,
+        "team": "MIN",
+        "position": 0,
+        "current": {
+          "o_rapm": 1.51,
+          "d_rapm": 0.62,
+          "total_rapm": 0.89,
+          "tier": 4,
+          "tier_name": "Quality Starter"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -0.48,
+            "tier": 5
+          },
+          "3yr": {
+            "rapm": -1.02,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -1.56,
+            "tier": 6
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -1,
+          "5yr": -2
+        },
+        "games": 69
+      },
+      {
+        "name": "Kyle Lowry",
+        "age": 38,
+        "team": "PHI",
+        "position": 0,
+        "current": {
+          "o_rapm": -0.16,
+          "d_rapm": -1.04,
+          "total_rapm": 0.88,
+          "tier": 4,
+          "tier_name": "Quality Starter"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.7,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 1.16,
+            "tier": 3
+          },
+          "5yr": {
+            "rapm": 0.62,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 1,
+          "5yr": 0
+        },
+        "games": 35
+      },
+      {
+        "name": "Terance Mann",
+        "age": 28,
+        "team": "LAC",
+        "position": 0,
+        "current": {
+          "o_rapm": 1.02,
+          "d_rapm": 0.18,
+          "total_rapm": 0.83,
+          "tier": 4,
+          "tier_name": "Quality Starter"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.19,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 0.65,
+            "tier": 4
+          },
+          "5yr": {
+            "rapm": 0.11,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 37
+      },
+      {
+        "name": "Terance Mann",
+        "age": 28,
+        "team": "ATL",
+        "position": 0,
+        "current": {
+          "o_rapm": 1.02,
+          "d_rapm": 0.18,
+          "total_rapm": 0.83,
+          "tier": 4,
+          "tier_name": "Quality Starter"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.19,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 0.65,
+            "tier": 4
+          },
+          "5yr": {
+            "rapm": 0.11,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 37
+      },
+      {
+        "name": "Terance Mann",
+        "age": 28,
+        "team": "LAC",
+        "position": 0,
+        "current": {
+          "o_rapm": 1.02,
+          "d_rapm": 0.18,
+          "total_rapm": 0.83,
+          "tier": 4,
+          "tier_name": "Quality Starter"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.19,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 0.65,
+            "tier": 4
+          },
+          "5yr": {
+            "rapm": 0.11,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 37
+      },
+      {
+        "name": "Terance Mann",
+        "age": 28,
+        "team": "ATL",
+        "position": 0,
+        "current": {
+          "o_rapm": 1.02,
+          "d_rapm": 0.18,
+          "total_rapm": 0.83,
+          "tier": 4,
+          "tier_name": "Quality Starter"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.19,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 0.65,
+            "tier": 4
+          },
+          "5yr": {
+            "rapm": 0.11,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 37
+      },
+      {
+        "name": "Terance Mann",
+        "age": 28,
+        "team": "LAC",
+        "position": 0,
+        "current": {
+          "o_rapm": 1.02,
+          "d_rapm": 0.18,
+          "total_rapm": 0.83,
+          "tier": 4,
+          "tier_name": "Quality Starter"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.19,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 0.65,
+            "tier": 4
+          },
+          "5yr": {
+            "rapm": 0.11,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 30
+      },
+      {
+        "name": "Terance Mann",
+        "age": 28,
+        "team": "ATL",
+        "position": 0,
+        "current": {
+          "o_rapm": 1.02,
+          "d_rapm": 0.18,
+          "total_rapm": 0.83,
+          "tier": 4,
+          "tier_name": "Quality Starter"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.19,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 0.65,
+            "tier": 4
+          },
+          "5yr": {
+            "rapm": 0.11,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 30
+      },
+      {
+        "name": "Terance Mann",
+        "age": 28,
+        "team": "LAC",
+        "position": 0,
+        "current": {
+          "o_rapm": 1.02,
+          "d_rapm": 0.18,
+          "total_rapm": 0.83,
+          "tier": 4,
+          "tier_name": "Quality Starter"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.19,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 0.65,
+            "tier": 4
+          },
+          "5yr": {
+            "rapm": 0.11,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 30
+      },
+      {
+        "name": "Terance Mann",
+        "age": 28,
+        "team": "ATL",
+        "position": 0,
+        "current": {
+          "o_rapm": 1.02,
+          "d_rapm": 0.18,
+          "total_rapm": 0.83,
+          "tier": 4,
+          "tier_name": "Quality Starter"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 1.19,
+            "tier": 3
+          },
+          "3yr": {
+            "rapm": 0.65,
+            "tier": 4
+          },
+          "5yr": {
+            "rapm": 0.11,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 30
+      },
+      {
+        "name": "D'Angelo Russell",
+        "age": 28,
+        "team": "LAL",
+        "position": 0,
+        "current": {
+          "o_rapm": 1.63,
+          "d_rapm": 0.82,
+          "total_rapm": 0.82,
+          "tier": 4,
+          "tier_name": "Quality Starter"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -0.88,
+            "tier": 5
+          },
+          "3yr": {
+            "rapm": -1.42,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -1.96,
+            "tier": 6
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -1,
+          "5yr": -2
+        },
+        "games": 29
+      },
+      {
+        "name": "D'Angelo Russell",
+        "age": 28,
+        "team": "BKN",
+        "position": 0,
+        "current": {
+          "o_rapm": 1.63,
+          "d_rapm": 0.82,
+          "total_rapm": 0.82,
+          "tier": 4,
+          "tier_name": "Quality Starter"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -0.88,
+            "tier": 5
+          },
+          "3yr": {
+            "rapm": -1.42,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -1.96,
+            "tier": 6
+          }
+        },
+        "tier_changes": {
+          "1yr": -1,
+          "3yr": -1,
+          "5yr": -2
+        },
+        "games": 29
+      }
+    ]
+  },
+  {
+    "tier": 5,
+    "name": "Rotation Player",
+    "color": "#32CD32",
+    "count": 187,
+    "players": [
+      {
+        "name": "Matisse Thybulle",
+        "age": 27,
+        "team": "POR",
+        "position": 0,
+        "current": {
+          "o_rapm": -2.1,
+          "d_rapm": -2.06,
+          "total_rapm": -0.04,
+          "tier": 5,
+          "tier_name": "Rotation Player"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 0.77,
+            "tier": 4
+          },
+          "3yr": {
+            "rapm": 0.27,
+            "tier": 4
+          },
+          "5yr": {
+            "rapm": -0.27,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 1,
+          "5yr": 0
+        },
+        "games": 15
+      },
+      {
+        "name": "Ben Simmons",
+        "age": 28,
+        "team": "BKN",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.32,
+          "d_rapm": 0.4,
+          "total_rapm": -0.07,
+          "tier": 5,
+          "tier_name": "Rotation Player"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 0.25,
+            "tier": 4
+          },
+          "3yr": {
+            "rapm": -0.29,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -0.83,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 33
+      },
+      {
+        "name": "Ben Simmons",
+        "age": 28,
+        "team": "LAC",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.32,
+          "d_rapm": 0.4,
+          "total_rapm": -0.07,
+          "tier": 5,
+          "tier_name": "Rotation Player"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 0.25,
+            "tier": 4
+          },
+          "3yr": {
+            "rapm": -0.29,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -0.83,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 33
+      },
+      {
+        "name": "Ben Simmons",
+        "age": 28,
+        "team": "BKN",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.32,
+          "d_rapm": 0.4,
+          "total_rapm": -0.07,
+          "tier": 5,
+          "tier_name": "Rotation Player"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 0.25,
+            "tier": 4
+          },
+          "3yr": {
+            "rapm": -0.29,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -0.83,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 33
+      },
+      {
+        "name": "Ben Simmons",
+        "age": 28,
+        "team": "LAC",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.32,
+          "d_rapm": 0.4,
+          "total_rapm": -0.07,
+          "tier": 5,
+          "tier_name": "Rotation Player"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 0.25,
+            "tier": 4
+          },
+          "3yr": {
+            "rapm": -0.29,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -0.83,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 33
+      },
+      {
+        "name": "Ben Simmons",
+        "age": 28,
+        "team": "BKN",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.32,
+          "d_rapm": 0.4,
+          "total_rapm": -0.07,
+          "tier": 5,
+          "tier_name": "Rotation Player"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 0.25,
+            "tier": 4
+          },
+          "3yr": {
+            "rapm": -0.29,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -0.83,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 18
+      },
+      {
+        "name": "Ben Simmons",
+        "age": 28,
+        "team": "LAC",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.32,
+          "d_rapm": 0.4,
+          "total_rapm": -0.07,
+          "tier": 5,
+          "tier_name": "Rotation Player"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 0.25,
+            "tier": 4
+          },
+          "3yr": {
+            "rapm": -0.29,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -0.83,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 18
+      },
+      {
+        "name": "Ben Simmons",
+        "age": 28,
+        "team": "BKN",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.32,
+          "d_rapm": 0.4,
+          "total_rapm": -0.07,
+          "tier": 5,
+          "tier_name": "Rotation Player"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 0.25,
+            "tier": 4
+          },
+          "3yr": {
+            "rapm": -0.29,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -0.83,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 18
+      },
+      {
+        "name": "Ben Simmons",
+        "age": 28,
+        "team": "LAC",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.32,
+          "d_rapm": 0.4,
+          "total_rapm": -0.07,
+          "tier": 5,
+          "tier_name": "Rotation Player"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 0.25,
+            "tier": 4
+          },
+          "3yr": {
+            "rapm": -0.29,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -0.83,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 18
+      },
+      {
+        "name": "Duop Reath",
+        "age": 28,
+        "team": "POR",
+        "position": 0,
+        "current": {
+          "o_rapm": 1.62,
+          "d_rapm": 1.72,
+          "total_rapm": -0.1,
+          "tier": 5,
+          "tier_name": "Rotation Player"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -0.29,
+            "tier": 5
+          },
+          "3yr": {
+            "rapm": -0.83,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -1.37,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 27
+      },
+      {
+        "name": "Tobias Harris",
+        "age": 32,
+        "team": "DET",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.44,
+          "d_rapm": 0.56,
+          "total_rapm": -0.12,
+          "tier": 5,
+          "tier_name": "Rotation Player"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -0.83,
+            "tier": 5
+          },
+          "3yr": {
+            "rapm": -1.37,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -1.91,
+            "tier": 6
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": 0,
+          "5yr": -1
+        },
+        "games": 73
+      },
+      {
+        "name": "Cameron Johnson",
+        "age": 28,
+        "team": "BKN",
+        "position": 0,
+        "current": {
+          "o_rapm": -0.17,
+          "d_rapm": -0.05,
+          "total_rapm": -0.12,
+          "tier": 5,
+          "tier_name": "Rotation Player"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -0.3,
+            "tier": 5
+          },
+          "3yr": {
+            "rapm": -0.84,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -1.38,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 57
+      },
+      {
+        "name": "Jordan Clarkson",
+        "age": 32,
+        "team": "UTA",
+        "position": 0,
+        "current": {
+          "o_rapm": 1.15,
+          "d_rapm": 1.27,
+          "total_rapm": -0.13,
+          "tier": 5,
+          "tier_name": "Rotation Player"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -0.97,
+            "tier": 5
+          },
+          "3yr": {
+            "rapm": -1.51,
+            "tier": 6
+          },
+          "5yr": {
+            "rapm": -2.05,
+            "tier": 6
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": -1,
+          "5yr": -1
+        },
+        "games": 37
+      },
+      {
+        "name": "Kevin Love",
+        "age": 36,
+        "team": "MIA",
+        "position": 0,
+        "current": {
+          "o_rapm": -0.35,
+          "d_rapm": -0.22,
+          "total_rapm": -0.13,
+          "tier": 5,
+          "tier_name": "Rotation Player"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": 0.12,
+            "tier": 4
+          },
+          "3yr": {
+            "rapm": -0.42,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -0.96,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 23
+      },
+      {
+        "name": "Jaden McDaniels",
+        "age": 24,
+        "team": "MIN",
+        "position": 0,
+        "current": {
+          "o_rapm": -0.03,
+          "d_rapm": 0.09,
+          "total_rapm": -0.13,
+          "tier": 5,
+          "tier_name": "Rotation Player"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -0.4,
+            "tier": 5
+          },
+          "3yr": {
+            "rapm": -0.41,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -0.73,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 82
+      }
+    ]
+  },
+  {
+    "tier": 6,
+    "name": "Bench/Developing",
+    "color": "#808080",
+    "count": 239,
+    "players": [
+      {
+        "name": "JT Thor",
+        "age": 22,
+        "team": "WAS",
+        "position": 0,
+        "current": {
+          "o_rapm": -1.31,
+          "d_rapm": 0.19,
+          "total_rapm": -1.5,
+          "tier": 6,
+          "tier_name": "Bench/Developing"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -0.7,
+            "tier": 5
+          },
+          "3yr": {
+            "rapm": -0.1,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": 0.48,
+            "tier": 4
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 1,
+          "5yr": 2
+        },
+        "games": 10
+      },
+      {
+        "name": "Kelly Olynyk",
+        "age": 33,
+        "team": "TOR",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.7,
+          "d_rapm": 2.22,
+          "total_rapm": -1.51,
+          "tier": 6,
+          "tier_name": "Bench/Developing"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -0.38,
+            "tier": 5
+          },
+          "3yr": {
+            "rapm": -0.92,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -1.46,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 1,
+          "5yr": 1
+        },
+        "games": 24
+      },
+      {
+        "name": "Kelly Olynyk",
+        "age": 33,
+        "team": "NOP",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.7,
+          "d_rapm": 2.22,
+          "total_rapm": -1.51,
+          "tier": 6,
+          "tier_name": "Bench/Developing"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -0.38,
+            "tier": 5
+          },
+          "3yr": {
+            "rapm": -0.92,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -1.46,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 1,
+          "5yr": 1
+        },
+        "games": 24
+      },
+      {
+        "name": "Kelly Olynyk",
+        "age": 33,
+        "team": "TOR",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.7,
+          "d_rapm": 2.22,
+          "total_rapm": -1.51,
+          "tier": 6,
+          "tier_name": "Bench/Developing"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -0.38,
+            "tier": 5
+          },
+          "3yr": {
+            "rapm": -0.92,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -1.46,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 1,
+          "5yr": 1
+        },
+        "games": 24
+      },
+      {
+        "name": "Kelly Olynyk",
+        "age": 33,
+        "team": "NOP",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.7,
+          "d_rapm": 2.22,
+          "total_rapm": -1.51,
+          "tier": 6,
+          "tier_name": "Bench/Developing"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -0.38,
+            "tier": 5
+          },
+          "3yr": {
+            "rapm": -0.92,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -1.46,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 1,
+          "5yr": 1
+        },
+        "games": 24
+      },
+      {
+        "name": "Kelly Olynyk",
+        "age": 33,
+        "team": "TOR",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.7,
+          "d_rapm": 2.22,
+          "total_rapm": -1.51,
+          "tier": 6,
+          "tier_name": "Bench/Developing"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -0.38,
+            "tier": 5
+          },
+          "3yr": {
+            "rapm": -0.92,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -1.46,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 1,
+          "5yr": 1
+        },
+        "games": 20
+      },
+      {
+        "name": "Kelly Olynyk",
+        "age": 33,
+        "team": "NOP",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.7,
+          "d_rapm": 2.22,
+          "total_rapm": -1.51,
+          "tier": 6,
+          "tier_name": "Bench/Developing"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -0.38,
+            "tier": 5
+          },
+          "3yr": {
+            "rapm": -0.92,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -1.46,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 1,
+          "5yr": 1
+        },
+        "games": 20
+      },
+      {
+        "name": "Kelly Olynyk",
+        "age": 33,
+        "team": "TOR",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.7,
+          "d_rapm": 2.22,
+          "total_rapm": -1.51,
+          "tier": 6,
+          "tier_name": "Bench/Developing"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -0.38,
+            "tier": 5
+          },
+          "3yr": {
+            "rapm": -0.92,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -1.46,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 1,
+          "5yr": 1
+        },
+        "games": 20
+      },
+      {
+        "name": "Kelly Olynyk",
+        "age": 33,
+        "team": "NOP",
+        "position": 0,
+        "current": {
+          "o_rapm": 0.7,
+          "d_rapm": 2.22,
+          "total_rapm": -1.51,
+          "tier": 6,
+          "tier_name": "Bench/Developing"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -0.38,
+            "tier": 5
+          },
+          "3yr": {
+            "rapm": -0.92,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -1.46,
+            "tier": 5
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 1,
+          "5yr": 1
+        },
+        "games": 20
+      },
+      {
+        "name": "Kris Murray",
+        "age": 24,
+        "team": "POR",
+        "position": 0,
+        "current": {
+          "o_rapm": -1.48,
+          "d_rapm": 0.05,
+          "total_rapm": -1.53,
+          "tier": 6,
+          "tier_name": "Bench/Developing"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -1.53,
+            "tier": 6
+          },
+          "3yr": {
+            "rapm": -1.56,
+            "tier": 6
+          },
+          "5yr": {
+            "rapm": -1.89,
+            "tier": 6
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 65
+      },
+      {
+        "name": "DaQuan Jeffries",
+        "age": 27,
+        "team": "CHA",
+        "position": 0,
+        "current": {
+          "o_rapm": -1.33,
+          "d_rapm": 0.2,
+          "total_rapm": -1.53,
+          "tier": 6,
+          "tier_name": "Bench/Developing"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -1.63,
+            "tier": 6
+          },
+          "3yr": {
+            "rapm": -2.07,
+            "tier": 6
+          },
+          "5yr": {
+            "rapm": -2.61,
+            "tier": 6
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 46
+      },
+      {
+        "name": "Daniel Gafford",
+        "age": 26,
+        "team": "DAL",
+        "position": 0,
+        "current": {
+          "o_rapm": -0.27,
+          "d_rapm": 1.27,
+          "total_rapm": -1.54,
+          "tier": 6,
+          "tier_name": "Bench/Developing"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -1.14,
+            "tier": 5
+          },
+          "3yr": {
+            "rapm": -1.45,
+            "tier": 5
+          },
+          "5yr": {
+            "rapm": -1.99,
+            "tier": 6
+          }
+        },
+        "tier_changes": {
+          "1yr": 1,
+          "3yr": 1,
+          "5yr": 0
+        },
+        "games": 57
+      },
+      {
+        "name": "Christian Braun",
+        "age": 23,
+        "team": "DEN",
+        "position": 0,
+        "current": {
+          "o_rapm": -2.53,
+          "d_rapm": -0.98,
+          "total_rapm": -1.55,
+          "tier": 6,
+          "tier_name": "Bench/Developing"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -1.88,
+            "tier": 6
+          },
+          "3yr": {
+            "rapm": -1.88,
+            "tier": 6
+          },
+          "5yr": {
+            "rapm": -2.11,
+            "tier": 6
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 79
+      },
+      {
+        "name": "Naz Reid",
+        "age": 25,
+        "team": "MIN",
+        "position": 0,
+        "current": {
+          "o_rapm": -1.94,
+          "d_rapm": -0.37,
+          "total_rapm": -1.57,
+          "tier": 6,
+          "tier_name": "Bench/Developing"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -2.71,
+            "tier": 6
+          },
+          "3yr": {
+            "rapm": -2.89,
+            "tier": 6
+          },
+          "5yr": {
+            "rapm": -3.33,
+            "tier": 6
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 80
+      },
+      {
+        "name": "Pat Spencer",
+        "age": 28,
+        "team": "GSW",
+        "position": 0,
+        "current": {
+          "o_rapm": -0.87,
+          "d_rapm": 0.72,
+          "total_rapm": -1.59,
+          "tier": 6,
+          "tier_name": "Bench/Developing"
+        },
+        "projections": {
+          "1yr": {
+            "rapm": -1.78,
+            "tier": 6
+          },
+          "3yr": {
+            "rapm": -2.32,
+            "tier": 6
+          },
+          "5yr": {
+            "rapm": -2.86,
+            "tier": 6
+          }
+        },
+        "tier_changes": {
+          "1yr": 0,
+          "3yr": 0,
+          "5yr": 0
+        },
+        "games": 20
+      }
+    ]
+  }
+]

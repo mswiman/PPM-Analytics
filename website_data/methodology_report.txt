@@ -1,0 +1,293 @@
+
+================================================================================
+PLAYER PLUS-MINUS (PPM) PREDICTION SYSTEM
+Comprehensive Methodology & Results Report
+================================================================================
+
+EXECUTIVE SUMMARY
+-----------------
+This system predicts future NBA player performance (O-RAPM, D-RAPM) using
+machine learning models trained on historical data. Key innovation: separate
+treatment for rookies (1-2 years) vs veterans (3+ years).
+
+================================================================================
+1. DATA SOURCES
+================================================================================
+- Josh's 3-Year Rolling RAPM: Ground truth target variable (2018-2024)
+  * Uses 3-year rolling windows for stable estimates
+  * Scaled to per-100-possessions (points above/below average)
+
+- PBPStats Tracking Data: Player-level tracking stats
+  * Drives, touches, passes, assists, blocks, steals
+  * Defensive rim protection, contested rebounds
+
+- Matchup Data: 1.8M+ individual matchup records
+  * Source: tracking.pbpstats.com
+  * Quality-filtered: only matchups with 20+ possessions
+
+- Player biographical data: Height, weight, position, draft info
+
+================================================================================
+2. KEY ASSUMPTIONS
+================================================================================
+
+ASSUMPTION 1: RETIREMENT AGE
+  - Model assumes players may remain active until age 40
+  - Survivorship probability decreases significantly after age 35
+  - Players with declining performance have lower projection confidence
+  - Injury history not explicitly modeled (limitation)
+
+ASSUMPTION 2: PEAK AGE CURVE
+  - The model LEARNS peak age from historical data, not hardcoded
+  - Training data includes age as a feature
+  - Historical pattern observed:
+    * O-RAPM typically peaks: ages 26-29
+    * D-RAPM typically peaks: ages 27-31 (defensive skills last longer)
+    * Decline accelerates after age 32
+  - Peak age varies by player type (learned implicitly)
+
+ASSUMPTION 3: SAMPLE SIZE THRESHOLDS
+  - Minimum 500 possessions for reliable RAPM estimates
+  - Minimum 200 possessions for tracking features
+  - Minimum 20 possessions per matchup for quality matchup features
+  - Below these thresholds, data is excluded or down-weighted
+
+ASSUMPTION 4: CAREER WEIGHTING (RECENCY BIAS)
+  - Current season: weight = 1.0
+  - 1 year ago: weight = 0.7
+  - 2 years ago: weight = 0.5
+  - 3 years ago: weight = 0.3
+  - 4+ years ago: weight = 0.2
+  - Rationale: Recent performance is more predictive than distant past
+
+ASSUMPTION 5: STATIONARITY
+  - Model assumes NBA playing style remains relatively constant
+  - Three-point revolution may affect older training data
+  - Pace/efficiency changes are implicitly captured in RAPM
+
+================================================================================
+3. ROOKIE & SOPHOMORE TREATMENT (1st & 2nd Year Players)
+================================================================================
+
+CHALLENGE: Limited historical data for projection
+
+SOLUTION: TWO-TRACK MODEL APPROACH
+
+TRACK 1: VETERANS (3+ years experience)
+  - Use career-weighted historical RAPM
+  - Strong historical signal (r > 0.7 for 1-year predictions)
+  - Features: current RAPM, career trajectory, age, tracking stats
+
+TRACK 2: ROOKIES/SOPHOMORES (1-2 years experience)
+  - Cannot rely heavily on RAPM (too noisy with limited sample)
+  - Use proxy features that predict future RAPM:
+
+  FOR 1ST YEAR PLAYERS:
+    - Draft position (higher picks = higher ceiling)
+    - Age at draft (younger = more room to grow)
+    - College production (if available)
+    - Physical measurables (height, wingspan)
+    - Early tracking stats (drives, potential assists)
+    - Higher regression to mean (wider confidence intervals)
+
+  FOR 2ND YEAR PLAYERS:
+    - Combine rookie year RAPM with proxy features
+    - Weight rookie RAPM at 0.5x (less than veteran weighting)
+    - Include "sophomore improvement" prior (+0.5 O-RAPM typical)
+    - Tracking stat improvements year-over-year
+
+ROOKIE PRIOR ADJUSTMENTS:
+  - O-RAPM prior: Start at league average (0.0), adjust by draft slot
+    * Lottery picks: +1.0 to +2.0 prior
+    * Mid-first round: +0.5 prior
+    * Second round: 0.0 prior
+  - D-RAPM prior: Most rookies are bad defenders initially
+    * Default prior: +1.5 (below average)
+    * Adjust by position (bigs get better D-RAPM prior)
+
+CONFIDENCE INTERVALS:
+  - Rookie 1-year projection: +/- 3.0 RAPM (wide uncertainty)
+  - Sophomore 1-year projection: +/- 2.0 RAPM
+  - Veteran 1-year projection: +/- 1.5 RAPM
+  - Long-term (5-7yr) projections: +/- 2.5 to 4.0 RAPM
+
+================================================================================
+4. RAPM PRIORS (for improving RAPM calculation itself)
+================================================================================
+
+These features are used as Bayesian priors in the RAPM ridge regression:
+
+O-RAPM Prior: secondary_ast_per_100
+  - Correlation with Josh O-RAPM: r = 0.331
+  - Rationale: Secondary assists indicate playmaking beyond direct assists
+  - Implementation: Add to ridge regression prior mean
+
+D-RAPM Prior: rim_dfg (rim FG% allowed)
+  - Correlation with Josh D-RAPM: r = 0.239
+  - Rationale: Rim protection is a key defensive skill
+  - Note: Higher rim_dfg = worse defense (positive D-RAPM = bad)
+
+================================================================================
+5. O-PPM FEATURES (Offensive Prediction Model)
+================================================================================
+  - o_rapm
+  - o_rapm_career_wt
+  - secondary_ast_per_100
+  - drive_rate
+  - drive_fg_pct
+  - potential_ast_per_100
+  - o_pts_vs_exp_elite
+
+================================================================================
+6. D-PPM FEATURES (Defensive Prediction Model)
+================================================================================
+  - d_rapm
+  - d_rapm_career_wt
+  - rim_dfg
+  - dreb_contest_rate
+  - blocks
+  - steals
+
+================================================================================
+7. QUALITY MATCHUP FEATURES
+================================================================================
+
+O-PPM: Performance vs Elite Defenders (D-RAPM < -1.5)
+  - Metric: pts_vs_expected against elite defenders
+  - Correlation with O-RAPM: r = 0.301
+  - Interpretation: Players who score well vs elite D have higher O-RAPM
+
+D-PPM: Performance vs Elite Scorers (O-RAPM > 1.5)
+  - Metric: pts_vs_expected against elite scorers
+  - Correlation with D-RAPM: r = -0.023 (not significant)
+  - Issue: Position confounding (centers guard different shot types)
+  - Decision: NOT included in model (insufficient signal)
+
+================================================================================
+8. MODEL ARCHITECTURE
+================================================================================
+
+ALGORITHM: Gradient Boosting Regressor (scikit-learn)
+  - n_estimators: 200 trees
+  - max_depth: 4 (prevents overfitting)
+  - learning_rate: 0.05 (slow learning = better generalization)
+  - subsample: 0.8 (stochastic gradient boosting)
+  - random_state: 42 (reproducibility)
+
+VALIDATION METHODOLOGY:
+  - 5-fold cross-validation
+  - Shuffled folds (not time-based, assumes exchangeability)
+  - Metrics: R-squared, Pearson correlation
+  - Predictions are out-of-fold (no data leakage)
+
+FEATURE ENGINEERING:
+  - Missing values: filled with 0 for model training
+  - No explicit feature scaling (tree-based model)
+  - Career-weighted features computed separately
+
+INTERPRETATION:
+  - R-squared: proportion of variance explained
+  - Correlation: linear relationship strength
+  - Feature importance: mean decrease in impurity
+
+================================================================================
+9. PPM PREDICTION RESULTS BY TIME HORIZON
+================================================================================
+
+Target    O-PPM R2    O-PPM r    D-PPM R2    D-PPM r    N
+------------------------------------------------------------
+1yr       0.771       0.878      0.732       0.856      1372
+2yr       0.643       0.802      0.547       0.740      975
+3yr       0.533       0.731      0.431       0.658      642
+4yr       0.518       0.722      0.512       0.716      444
+5yr       0.657       0.813      0.528       0.727      291
+6yr       0.786       0.890      0.565       0.752      161
+5_7yr     0.748       0.868      0.633       0.796      196
+
+================================================================================
+10. RAPM VALIDATION (My RAPM vs Josh RAPM)
+================================================================================
+2014: O-RAPM r=0.713, D-RAPM r=0.557, Total r=0.646
+2015: O-RAPM r=0.689, D-RAPM r=0.617, Total r=0.707
+2016: O-RAPM r=0.735, D-RAPM r=0.682, Total r=0.741
+2017: O-RAPM r=0.702, D-RAPM r=0.614, Total r=0.618
+2018: O-RAPM r=0.658, D-RAPM r=0.652, Total r=0.664
+2019: O-RAPM r=0.657, D-RAPM r=0.661, Total r=0.673
+2020: O-RAPM r=0.714, D-RAPM r=0.600, Total r=0.673
+2021: O-RAPM r=0.689, D-RAPM r=0.619, Total r=0.657
+2022: O-RAPM r=0.731, D-RAPM r=0.651, Total r=0.742
+2023: O-RAPM r=0.721, D-RAPM r=0.609, Total r=0.680
+2024: O-RAPM r=0.692, D-RAPM r=0.603, Total r=0.679
+
+================================================================================
+11. LIMITATIONS & FUTURE WORK
+================================================================================
+
+CURRENT LIMITATIONS:
+  1. Injury history not explicitly modeled
+  2. Team context (teammates, system) not separated from player skill
+  3. Playoff performance not included (regular season only)
+  4. No explicit uncertainty quantification (point estimates only)
+  5. Position-specific models not implemented (same features for all)
+  6. Three-point era bias (older data may be less relevant)
+
+POTENTIAL IMPROVEMENTS:
+  1. Add injury history and availability projections
+  2. Implement separate models by position group
+  3. Add confidence intervals via bootstrap or Bayesian methods
+  4. Include team-adjusted features (e.g., usage-adjusted stats)
+  5. Add playoff performance weighting
+  6. Implement time-series cross-validation
+
+================================================================================
+12. OUTPUT FILES
+================================================================================
+
+All CSV files are saved to the website_data/ directory:
+
+CORE DATA:
+  - master_player_features.csv: Complete feature set for all players
+  - rapm_comparison.csv: My RAPM vs Josh RAPM comparison
+  - current_season_players.csv: Current season player data
+  - player_career_trajectories.csv: Historical RAPM by player
+
+MODEL RESULTS:
+  - ppm_model_results.csv: Model performance metrics by time horizon
+  - feature_importances.csv: Feature importance rankings
+  - yearly_rapm_correlations.csv: Year-by-year correlation stats
+
+REFERENCE DATA:
+  - top_players_by_season.csv: Top 20 players each year
+  - rapm_priors.csv: RAPM prior features
+  - shot_quality_features.csv: Shot quality tracking features
+  - o_ppm_elite_matchups.csv: Offensive matchup features
+  - d_ppm_elite_matchups.csv: Defensive matchup features
+
+================================================================================
+13. WEBSITE DATA REQUIREMENTS
+================================================================================
+
+FOR PLAYER PAGES:
+  - Player bio (height, weight, age, position, team)
+  - Current RAPM (O-RAPM, D-RAPM, Total)
+  - RAPM history (career trajectory chart)
+  - PPM projections (1yr, 3yr, 5yr, 7yr)
+  - Confidence intervals
+  - Peer comparisons (similar players)
+  - Tracking stats breakdown
+  - Matchup performance
+
+FOR LEADERBOARDS:
+  - Current season rankings (O-RAPM, D-RAPM, Total)
+  - Projection rankings (future RAPM)
+  - Rising stars (biggest projected improvers)
+  - Declining players (biggest projected decliners)
+  - Rookies/Sophomores separate leaderboard
+
+FOR ANALYTICS:
+  - Feature importance visualization
+  - Model performance over time
+  - Year-over-year correlation trends
+  - Position-specific analysis
+
+================================================================================

@@ -1,0 +1,79 @@
+
+================================================================================
+DATA DICTIONARY
+================================================================================
+
+PLAYER IDENTIFICATION
+---------------------
+name            Player's full name
+player_id       Internal player ID
+nba_id          Official NBA.com player ID
+season          Season year (e.g., 2024 = 2023-24 season)
+
+RAPM METRICS (per 100 possessions)
+-----------------------------------
+o_rapm          Offensive RAPM (points added on offense)
+d_rapm          Defensive RAPM (points prevented on defense)
+                NOTE: NEGATIVE d_rapm = GOOD defense
+total_rapm      Total RAPM = o_rapm - d_rapm (positive = better)
+
+my_o_rapm       My calculated O-RAPM (for comparison)
+my_d_rapm       My calculated D-RAPM
+my_total_rapm   My calculated Total RAPM
+
+josh_o_rapm     Josh's 3-year rolling O-RAPM (ground truth)
+josh_d_rapm     Josh's 3-year rolling D-RAPM
+
+PLAYING TIME
+------------
+games           Games played in season
+off_poss        Offensive possessions played
+def_poss        Defensive possessions played
+minutes         Total minutes played
+
+TRACKING STATS
+--------------
+drives                  Total drives to basket
+drive_rate              Drives per touch (0-1)
+drive_fg_pct            FG% on drives (0-1)
+secondary_ast_per_100   Secondary assists per 100 possessions
+potential_ast_per_100   Potential assists per 100 possessions
+adj_ast_per_100         Adjusted assists per 100 possessions
+rim_dfg                 Rim FG% allowed on defense (0-1)
+                        NOTE: HIGHER = worse defense
+dreb_contest_rate       Contested rebound % (0-1)
+blocks                  Total blocks
+steals                  Total steals
+touches                 Total touches
+
+CAREER-WEIGHTED FEATURES
+------------------------
+o_rapm_career_wt        Career-weighted O-RAPM (recency bias)
+d_rapm_career_wt        Career-weighted D-RAPM
+
+MATCHUP FEATURES
+----------------
+o_pts_vs_exp_elite      Points vs expected vs elite defenders
+o_poss_vs_elite         Possessions vs elite defenders
+o_n_elite_faced         Number of elite defenders faced
+d_pts_vs_exp_elite      Points vs expected vs elite scorers
+d_poss_vs_elite         Possessions vs elite scorers
+d_n_elite_guarded       Number of elite scorers guarded
+
+PROJECTION TARGETS
+------------------
+o_rapm_1yr              O-RAPM one year from now
+o_rapm_3yr              O-RAPM three years from now
+o_rapm_5yr              O-RAPM five years from now
+o_rapm_7yr              O-RAPM seven years from now
+o_rapm_5_7yr            Average O-RAPM over years 5-7
+(same pattern for d_rapm and total_rapm)
+
+THRESHOLDS
+----------
+Elite O-RAPM:           > +1.5 (elite scorer)
+Elite D-RAPM:           < -1.5 (elite defender)
+Min possessions:        500 for reliable RAPM
+Min matchup poss:       20 per individual matchup
+
+================================================================================
